@@ -1,5 +1,5 @@
 
-//import {Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 const { Component} = require("react")
 
 
@@ -17,7 +17,7 @@ class Header extends Component{
 
 
         //  </div>
-        <div>
+        <div className = "head">
         <header>
 		
 		<div id="wrap_header" >
@@ -27,23 +27,12 @@ class Header extends Component{
 			<div class="main_nav">
 				<nav class="menu col_header">
 					<ul class="main_menu">
-						<li><a href="index.html">Home</a>
-							<ul class="sub_menu">
-								<li><a href="index.html">Homepage</a></li>
-								<li><a href="home-boxed.html">Homepage Boxed</a></li>
-								<li><a href="home-outgrid.html">Homepage Outgrid</a></li>
-								<li><a href="home-showcase.html">Homepage Showcase</a></li>
-								<li><a href="home-vertical-menu.html">Home Vertical Menu</a></li>
-								<li><a href="home-onepage.html">Homepage Onepage</a></li>
-							</ul>
+						<li>
+						<Link to = '/Home'>Home</Link>
+
 						</li>
-						<li><a href="menu-01.html">Menus</a>
-							<ul class="sub_menu">
-								<li><a href="menu-01.html">Menu 01</a></li>
-								<li><a href="menu-02.html">Menu 02</a></li>
-								<li><a href="menu-03.html">Menu 03</a></li>
-								<li><a href="product-detail.html">Product Detail</a></li>
-							</ul>
+						<li><Link to = '/mymenu'>Menu</Link>
+							
 						</li>
 						<li><a href="reservation-01.html" class="have_sub_menu">Reservation</a>
 							<ul class="sub_menu">
@@ -60,13 +49,9 @@ class Header extends Component{
 								<li><a href="check-out.html">Check Out</a></li>
 							</ul>
 						</li>
-						<li><a href="blog-list-with-sidebar-01.html">Blog</a>
-							<ul class="sub_menu">
-								<li><a href="blog-list-with-sidebar-01.html">Blog With Sidebar V1</a></li>
-								<li><a href="blog-list-with-sidebar-02.html">Blog With Sidebar V2</a></li>
-								<li><a href="blog-mansory.html">Blog Mansory</a></li>
-								<li><a href="blog-detail.html">Blog Detail</a></li>
-							</ul>
+						<li><a href="#myModal" class="trigger-btn" data-toggle="modal">Login</a>
+
+						
 						</li>
 						<li><a href="contact-us.html">Contact</a></li>
 					</ul>
@@ -162,6 +147,7 @@ class Header extends Component{
 			</nav>
 		</div>
 	</header>
+	
     </div>
      )
  }
