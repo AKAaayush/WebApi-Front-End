@@ -13,10 +13,10 @@ import { Component } from "react";
                             <li>ADDRESS: 100 Tenth Avenue, New York City, NY 1001</li>
                             <li>FOR BOOKING: (044) 359 0173</li>
                             <li id="follow-us">FOLLOW US ON: 
-                                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                <a href="#"><i class="fa fa-tripadvisor" aria-hidden="true"></i></a>
-                                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                <i class="fa fa-facebook" aria-hidden="true"/>
+                                <i class="fa fa-twitter" aria-hidden="true"/>
+                                <i class="fa fa-tripadvisor" aria-hidden="true"/>
+                                <i class="fa fa-instagram" aria-hidden="true"/>
                             </li>
                         </ul>
                     </div>
@@ -88,7 +88,7 @@ import { Component } from "react";
                 </div>
             </div>
         </footer>
-        <a href="#" id="toTopBtn" class="cd-top text-replace js-cd-top cd-top--is-visible cd-top--fade-out" data-abc="true"></a>
+        {/* <a href="/" id="toTopBtn" class="cd-top text-replace js-cd-top cd-top--is-visible cd-top--fade-out" data-abc="true"></a> */}
 
         </>
          )

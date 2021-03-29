@@ -24,16 +24,19 @@ class ProductAdd extends Component{
             menu_title : this.state.menu_title,
             menu_desc : this.state.menu_desc,
             menu_image : this.state.menu_image
-
-
-         
-
         }
         e.preventDefault();
         axios.post('http://localhost:100/addmenu',data).then((response) =>{
 
             this.setState({ isRegisterIn: true })
           })
+
+          
+    }
+    fileHandler = (e)=> {
+        this.setState({
+            menu_image : e.target.files[0]
+        })
     }
     render(){
         return(
@@ -46,7 +49,7 @@ class ProductAdd extends Component{
                 <p><lable>Menu price:</lable> <input type="text" value ={this.state.menu_price} onChange ={(event)=> this.setState({menu_price : event.target.value})} /></p>
                 <p><lable>Menu desc:</lable> <input type="text" value ={this.state.menu_desc} onChange ={(event)=> this.setState({menu_desc : event.target.value})} /></p>
                 {/* <p><lable>Menu image:</lable> <input type="file" value ={this.state.menu_image} onChange ={(event)=> this.setState({menu_image : event.target.value})} /></p> */}
-                <p><lable>Menu image:</lable> <input type="text" value ={this.state.menu_image} onChange ={(event)=> this.setState({menu_image : event.target.value})} /></p>
+                <p><lable>Menu image:</lable> <input type="file" value ={this.state.menu_image} onChange ={(event)=> this.setState({menu_image : event.target.value})} /></p>
 
 
                 <Button onClick = {this.addMenu}>Add</Button>

@@ -1,5 +1,5 @@
-import React, { Component,onChange,onClickItem,onClickThumb } from "react";
-var Carousel = require('react-responsive-carousel').Carousel;
+import React, { Component } from "react";
+//var Carousel = require('react-responsive-carousel').Carousel;
 class Home extends Component{
      
         render(){ 

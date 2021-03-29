@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from 'axios'
-import { Redirect } from 'react-router-dom';
-import { Container } from "react-bootstrap";
+import { Link, Redirect } from 'react-router-dom';
+//import { Container } from "react-bootstrap";
 
 class Login extends Component {
 
@@ -36,9 +36,12 @@ class Login extends Component {
 
   render() {
     if (this.state.loginSuccess === true) {
-      return <Redirect to='/' />
+      return <Link to ='/mymenu' />
 
     }
+    if(localStorage.getItem('token')){
+      return <Redirect to='/home' />
+  }
     // else{
     //   return <Redirect to='/login' />
 
@@ -60,9 +63,6 @@ class Login extends Component {
       
       // </div>
 <>
-      <div class="text-center">
-      <a href="#myModal" class="trigger-btn" data-toggle="modal">Click to Open Login Modal</a>
-    </div>
     
     <div id="myModal" class="modal fade">
       <div class="modal-dialog modal-login">
@@ -75,20 +75,20 @@ class Login extends Component {
             <form action="/examples/actions/confirmation.php" method="post">
               <div class="form-group">
                 <i class="fa fa-user"></i>
-                <input type="text" class="form-control" placeholder="Username" required="required"/>
+                <input type="text" class="form-control"name="email" id="" placeholder="Username/Email" value={this.state.email} onChange={this.changeHandler} />
               </div>
               <div class="form-group">
                 <i class="fa fa-lock"></i>
-                <input type="password" class="form-control" placeholder="Password" required="required"/>					
+                <input type="password" class="form-control" name="password" id="" placeholder="Password" value={this.state.password} onChange={this.changeHandler}/>					
               </div>
               <div class="form-group">
-                <input type="submit" class="btn btn-primary btn-block btn-lg" value="Login"/>
+                <input type="submit" class="btn btn-primary btn-block btn-lg" value="Login" onClick={this.submitLogin}/>
               </div>
             </form>				
             
           </div>
           <div class="modal-footer">
-            <a href="#">Forgot Password?</a>
+            <a href="/register">Forgot Password?</a>
           </div>
         </div>
       </div>
