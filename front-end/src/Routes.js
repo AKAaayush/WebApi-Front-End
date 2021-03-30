@@ -1,7 +1,7 @@
 import { Component } from "react";
 import Register from './container/Register'
 import Login from './container/Login'
-import Signup from './container/Register'
+//import Signup from './container/Register'
 import MenuAdd from './container/MenuAdd'
 import MyMenu from './container/MyMenu'
 import Home from './container/Home'
@@ -11,14 +11,15 @@ import UpdateMenu from './container/UpdateMenu'
 import Header from './components/Header'
 //import Footer from './components/Footer'
 import {Route,BrowserRouter} from 'react-router-dom'
+import Navbar from './components/Navbar/Navbar'
 
  class Routes extends Component {
      render(){
          return(
         
-                         
         <BrowserRouter>
-        <Header/>
+        <Navbar/>
+        {/* <Header/> */}
         <Login/>
         {/* <Signup/> */}
             <Route path = '/home' component={Home}></Route>

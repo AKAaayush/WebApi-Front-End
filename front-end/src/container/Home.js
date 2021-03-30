@@ -4,7 +4,7 @@ class Home extends Component{
      
         render(){ 
             return(
-             
+              <section id="slider-deli">
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                   <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -33,6 +33,7 @@ class Home extends Component{
 
       
               </div>
+              </section>
         )
     
       }

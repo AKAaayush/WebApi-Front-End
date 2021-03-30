@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from 'axios'
-import { Link, Redirect } from 'react-router-dom';
+import {  Redirect } from 'react-router-dom';
 //import { Container } from "react-bootstrap";
 
 class Login extends Component {
@@ -36,12 +36,12 @@ class Login extends Component {
 
   render() {
     if (this.state.loginSuccess === true) {
-      return <Link to ='/mymenu' />
+      return <a href ='/home' />
 
     }
-    if(localStorage.getItem('token')){
-      return <Redirect to='/home' />
-  }
+  //   if(localStorage.getItem('token')){
+  //     return <Redirect to='/home' />
+  // }
     // else{
     //   return <Redirect to='/login' />
 
@@ -82,7 +82,8 @@ class Login extends Component {
                 <input type="password" class="form-control" name="password" id="" placeholder="Password" value={this.state.password} onChange={this.changeHandler}/>					
               </div>
               <div class="form-group">
-                <input type="submit" class="btn btn-primary btn-block btn-lg" value="Login" onClick={this.submitLogin}/>
+                {/* <input type="submit" class="btn btn-primary btn-block btn-lg" value="Login" onClick={this.submitLogin}/> */}
+                <a href = "/home"onClick={this.submitLogin}>Login</a>
               </div>
             </form>				
             

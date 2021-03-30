@@ -7,7 +7,10 @@ state = {
     name : '',
     email : '',
     address : '',
-    id : this.props.match.params.id
+    user: {},
+    config: {
+        headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
+    }
 }
     changeHandler = (e)=>{
         this.setState({
@@ -16,9 +19,10 @@ state = {
     }
 
     componentDidMount(){
-        axios.get('http://localhost:100/user/display/'+ this.state.id)
+        axios.get('http://localhost:100/checklogin', this.state.config)
         .then((response)=>
         this.setState({
+            user: response.data,
             name : response.data.name,
             address : response.data.address,
             email : response.data.email
@@ -34,7 +38,7 @@ state = {
     render(){
         return(
             <div>
-                this is userprofile page
+               <p>{this.state.user.name}</p>
             </div>
         )
     }

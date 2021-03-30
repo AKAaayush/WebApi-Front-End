@@ -96,7 +96,8 @@ window.location.href ="/"
 
 
 			//  </div>
-			<div className="head">
+			
+			
 				<header>
 
 
@@ -198,8 +199,8 @@ window.location.href ="/"
 						</nav>
 					</div>
 				</header>
-
-			</div>
+			
+		
 		)
 	}
 }
