@@ -8,7 +8,7 @@ import Home from './container/Home'
 import UserProfile from './container/UserProfile'
 //import Login from './container/Login'
 import UpdateMenu from './container/UpdateMenu'
-import Header from './components/Header'
+import FoodDetails from './container/FoodDetails'
 //import Footer from './components/Footer'
 import {Route,BrowserRouter} from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar'
@@ -29,6 +29,8 @@ import Navbar from './components/Navbar/Navbar'
             <Route path = '/updatemenu/:id' component={UpdateMenu}></Route>
             <Route path = '/login' component = {Login}></Route>
             <Route path = '/userprofile' component = {UserProfile}></Route>
+            <Route path = '/food/:menu_name' component = {FoodDetails}></Route>
+
 
             
             

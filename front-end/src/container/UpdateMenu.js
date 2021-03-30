@@ -8,7 +8,7 @@ class UpdateMenu extends Component{
         menu_price : '',
         menu_desc : '',
         menu_image : '',
-        id : this.props.match.params.id
+        id : this.props.match.params.menu_name
     }
     changeHandler = (e)=>{
         this.setState({
@@ -23,7 +23,7 @@ class UpdateMenu extends Component{
     }
 
     componentDidMount(){
-        axios.get('http://localhost:100/menu/single/' + this.state.id)
+        axios.get('http://localhost:100/menu/single/' + this.state.menu_name)
         .then((response)=>{
             this.setState({
            menu_name : response.data.menu_name,

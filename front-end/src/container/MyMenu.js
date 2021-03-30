@@ -69,11 +69,11 @@ class MyMenu extends Component {
 
                                             <div class="item-food row wow fadeInDown" data-wow-delay="0.2s">
                                                 <div class="col-12 col-sm-2 img-list-food wow zoomIn " data-wow-delay="0.2s">
-                                                    <a href="/mymenu"> <Image src={'http://localhost:100/images/' + menu.menu_image}  width='100'/></a>
+                                                    <a href=""> <Image src={'http://localhost:100/images/' + menu.menu_image}  width='100'/></a>
                                                 </div>
                                                 <div class="col-12 col-sm-8 text-list-food ">
                                                     <div class="name-price row">
-                                                        <div class="name-food col-12 col-sm-auto"><a class="hover-link-color" href="product-detail.html">{menu.menu_name}</a></div>
+                                                        <div class="name-food col-12 col-sm-auto"><a class="hover-link-color" href={'food/' + menu._id}>{menu.menu_name}</a></div>
                                                         <div class="line-food col">
                                                             <div class="add-line-run"></div>
                                                         </div>
@@ -86,6 +86,7 @@ class MyMenu extends Component {
                                                 </div>
                                                 <div class="price-food col-12 col-sm-2">{menu.menu_price}</div>
                                                 <Link to={'updatemenu/' + menu._id} >Update</Link>
+                                                <Link to={'food/' + menu.menu_name} >Update</Link>
                                             </div>
                                         </div>
 
