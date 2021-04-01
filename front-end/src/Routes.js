@@ -19,16 +19,18 @@ import { Nav } from "react-bootstrap";
         <BrowserRouter>
         <Navbar/>
         {/* <Header/> */}
-        <Login/>
+        {/* <Login/> */}
         {/* <Signup/> */}
             <Route path = '/home' component={Home}></Route>
             <Route path = '/menuadd' component={MenuAdd}></Route>
             <Route path = '/register' component={Register}></Route>
             <Route path = '/mymenu' component={MyMenu}></Route>
             <Route path = '/updatemenu/:id' component={UpdateMenu}></Route>
-            <Route path = '/login' component = {Login}></Route>
+            {/* <Route path = '/login' component = {Login}></Route> */}
             <Route path = '/userprofile' component = {UserProfile}></Route>
             <Route path = '/food/:menu_name' component = {FoodDetails}></Route>
+            <Route path = '/Login' component = {Login}></Route>
+
 
 
 

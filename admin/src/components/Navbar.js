@@ -42,10 +42,12 @@ class Navbar extends Component {
                   
                 </li>
                 <li class="has-subnav">
-                <Link to = '/reports'>
-                        <i class="fa fa-laptop fa-2x"style={mystyle}></i>
+                <Link to = '/Menu'>
+                        <i class="fa fa-book fa-2x"style={mystyle} ></i>
+                       
+                        
                         <span class="nav-text">
-                            Report
+                            Menus
                         </span>
                         </Link>
                     

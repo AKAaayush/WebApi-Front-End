@@ -21,7 +21,7 @@ class Navbar extends Component{
         if (localStorage.getItem('token')) {
             var login=<>
             
-            <h1 className ="navbar-logo">React<i className ="fab fa-react"></i></h1>
+            <h1 className ="navbar-logo">RMS<i className ="fab fa-react"></i></h1>
             <div className ="menu-icon" onClick ={this.handleClick}>
                 <i className={this.state.clicked ? 'fas fa-times': 'fas fa-bars'}></i>
             </div>
@@ -60,7 +60,7 @@ class Navbar extends Component{
         else{
             var logout = 
             <>
-            <h1 className ="navbar-logo">React<i className ="fab fa-react"></i></h1>
+            <h1 className ="navbar-logo">RMS</h1>
             <div className ="menu-icon" onClick ={this.handleClick}>
                 <i className={this.state.clicked ? 'fas fa-times': 'fas fa-bars'}></i>
             </div>
@@ -80,7 +80,7 @@ class Navbar extends Component{
                             <Link to = "/Aboutus" className="nav-links" >About-US</Link>
                         </li>
                         <li >
-                        <Link to = "/home"><a href="#myModal"className="nav-links" data-toggle="modal">Login</a></Link>
+                        <Link to = "/login"className="nav-links"> Login</Link>
                             {/* <Link to = "/login" className="nav-links" >Login</Link> */}
                         </li>
 

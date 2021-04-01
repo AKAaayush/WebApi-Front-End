@@ -19,7 +19,7 @@ overflow:visible;
 }
 
 .main-menu {
-background:#212121;
+  background: linear-gradient(90deg, rgb(53 53 56),rgb(38 29 202)100%);
 border-right:1px solid #e5e5e5;
 position:absolute;
 top:0;

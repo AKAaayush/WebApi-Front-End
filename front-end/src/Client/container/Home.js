@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 //var Carousel = require('react-responsive-carousel').Carousel;
-
+import OurFood from './OurFood'
 
 class Home extends Component{
      
@@ -38,6 +38,7 @@ class Home extends Component{
       
               </div>
               </section>
+              <OurFood/>
               </>
         )
     

@@ -10,7 +10,7 @@ import { Component } from "react";
                     <div class="column-footer col-lg-5 col-md-8 col-sm-7">
                         <h3>Contact information</h3>
                         <ul>
-                            <li>ADDRESS: 100 Tenth Avenue, New York City, NY 1001</li>
+                            <li>ADDRESS: Kathmandu Sofwarica</li>
                             <li>FOR BOOKING: (044) 359 0173</li>
                             <li id="follow-us">FOLLOW US ON: 
                                 <i class="fa fa-facebook" aria-hidden="true"/>
@@ -82,7 +82,7 @@ import { Component } from "react";
             <div class="wrap-bottom-footer">
                 <div class="container">
                     <div class="bottom-footer row justify-content-between">
-                        <div class="col-12 col-sm-7">© 2017 DesignGalaxy8. All rights reserved.</div>
+                        <div class="col-12 col-sm-7">© 2021 Aayush All rights reserved.</div>
                         <div class="col-12 col-sm-5"><span>Privacy policy</span><span>Terms of use</span></div>
                     </div>
                 </div>
