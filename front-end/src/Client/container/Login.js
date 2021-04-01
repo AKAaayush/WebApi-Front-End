@@ -36,7 +36,7 @@ class Login extends Component {
 
   render() {
     if (this.state.loginSuccess === true) {
-      return <a href ='/home' />
+      return <Redirect to ='/home'/>
 
     }
   //   if(localStorage.getItem('token')){
