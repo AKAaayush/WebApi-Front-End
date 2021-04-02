@@ -44,7 +44,7 @@ class UpdateMenu extends Component{
     }
 
     updateMenuData = (e)=>{
-        e.preventDefault();
+        e.preventDefault()
         
         axios.put('http://localhost:100/menu/update/:id', this.state)
         .then((response)=>{

@@ -18,6 +18,9 @@ class Reports extends Component {
 
   state = {
     fooditem: [],
+    config : {
+      header : {'authorization': `Bearer ${localStorage.getItem('token')}`}
+  }
 
 }
   componentDidMount() {

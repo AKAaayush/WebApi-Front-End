@@ -42,47 +42,47 @@ class Navbar extends Component {
                   
                 </li>
                 <li class="has-subnav">
-                <Link to = '/Menu'>
+                < a href= '/Menu'>
                         <i class="fa fa-book fa-2x"style={mystyle} ></i>
                        
                         
                         <span class="nav-text">
                             Menus
                         </span>
-                        </Link>
+                        </a>
                     
                 </li>
                 <li class="has-subnav">
-                    <a href="#">
-                       <i class="fa fa-list fa-2x"style={mystyle}></i>
+                    <a href="/fooditems">
+                       <i class="fa fa-hamburger fa-2x"style={mystyle}></i>
                         <span class="nav-text">
-                            Forms
+                            Food Items
                         </span>
                     </a>
                     
                 </li>
                 <li class="has-subnav">
-                    <a href="#">
-                       <i class="fa fa-folder-open fa-2x"style={mystyle}></i>
+                    <a href="/userdetails">
+                       <i class="fa fa-users fa-2x"style={mystyle}></i>
                         <span class="nav-text">
-                            Pages
+                            User
                         </span>
                     </a>
                    
                 </li>
                 <li>
                     <a href="#">
-                        <i class="fa fa-bar-chart-o fa-2x"style={mystyle}></i>
+                        <i class="fa fa-table fa-2x"style={mystyle}></i>
                         <span class="nav-text">
-                            Graphs and Statistics
+                            Table Booking
                         </span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <i class="fa fa-font fa-2x"style={mystyle}></i>
+                        <i class="fa fa-user-tie fa-2x"style={mystyle}></i>
                         <span class="nav-text">
-                           Quotes
+                           Staff
                         </span>
                     </a>
                 </li>

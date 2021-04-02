@@ -2,10 +2,12 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './container/Home';
-import Reports from './container/FootItems';
+import FoodItems from './container/FootItems';
 import Products from './container/Menu';
 import { Component } from 'react';
 import Login from './container/Login'
+import UserDetails from './container/UserDetails'
+
 // import Navbar from './components/Navbar';
 class Routes extends Component {
   render(){
@@ -17,8 +19,10 @@ class Routes extends Component {
         <Switch>
           <Route path='/' exact component={Login} />
           <Route path='/home' exact component={Home} />
-          <Route path='/reports' component={Reports} />
+          <Route path='/fooditems' component={FoodItems} />
           <Route path='/Menu' component={Products} />
+          <Route path='/userdetails' component={UserDetails} />
+
         </Switch>
       </Router>
     </>
