@@ -29,6 +29,7 @@ class Login extends Component {
             })
           //  localStorage.setItem('token', response.data.token);
           localStorage.setItem('token', response.data.token)
+        //   localStorage.getItem('token', response.data.token)
         })
         .catch((err)=>{
             console.log(err.response)

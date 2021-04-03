@@ -4,6 +4,9 @@ import axios from "axios";
 class OurFood extends Component{
     state = {
         fooditem: [],
+           config : {
+      header : {'authorization': `Bearer ${localStorage.getItem('token')}`}
+  }
 
     }
 

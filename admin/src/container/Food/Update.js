@@ -96,7 +96,7 @@ updateFoodData = (e)=>{
                                         <div class="col-lg-12 loginbttm">
                                             <div class="col-lg-8 login-btm login-button">
                                                 {/* <button type="submit" class="btn btn-outline-primary" onClick={this.AdminLogin}>LOGIN</button> */}
-                                                <a  Redirect = "/fooditems"class="btn btn-outline-primary" style={{alignContent :'center'}} onClick = {this.updateFoodData}>Update</a>
+                                                <a  href = "/fooditems"class="btn btn-outline-primary" style={{alignContent :'center'}} onClick = {this.updateFoodData}>Update</a>
                                             </div>
                                         </div>
                                     </form>

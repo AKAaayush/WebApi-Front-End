@@ -1,6 +1,6 @@
 // import React from 'react';
 import { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, LinkButton } from 'react-router-dom';
 // import pagiantionFactory from 'react-bootstrap-table2-paginator'
 import Navbar from '../components/Navbar';
 import axios from 'axios'
@@ -12,6 +12,7 @@ import 'jquery/dist/jquery.min.js';
 import "datatables.net-dt/js/dataTables.dataTables"
 import "datatables.net-dt/css/jquery.dataTables.min.css"
 import $ from 'jquery'; 
+import { Button } from 'bootstrap';
 
 class Reports extends Component {
 
@@ -40,6 +41,16 @@ class Reports extends Component {
 
             .catch()
  }
+ deleteFood = (id) => {
+  axios.delete('http://localhost:100/food/delete/' + id)
+      .then((response) => {
+          console.log(response)
+      })
+      .catch((err) => {
+          console.log(err.response)
+      })
+
+}
   render(){
     //Datatable HTML
   return (
@@ -51,7 +62,7 @@ class Reports extends Component {
     
       
       <div className="container">
-          
+     
           <table id="example" class="display">
             <thead>
                 <tr>
@@ -71,7 +82,7 @@ class Reports extends Component {
                     <td>{fooditem.food_desc}</td>
                     <td>{fooditem.food_price}</td>
                     <td><Image src={'http://localhost:100/images/' + fooditem.food_image}  width='40'/></td>
-                    <td><Link to ={'updatefood/'+ fooditem._id}>Update</Link>| <button>Delete</button></td>
+                    <td><Link to ={'updatefood/'+ fooditem._id}>Update</Link>| <button  onClick={this.deleteFood.bind(this, fooditem._id)}>Delete</button></td>
 
                    
                     
@@ -84,6 +95,9 @@ class Reports extends Component {
         </table>
           
         </div>
+        <a href="/addfooditem">Add</a>
+
+
       </div>
   );
 }

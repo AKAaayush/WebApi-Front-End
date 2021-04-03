@@ -7,6 +7,8 @@ import Products from './container/Menu';
 import { Component } from 'react';
 import Login from './container/Login'
 import UpdateFood from './container/Food/Update'
+import AddFood from './container/Food/Add'
+
 
 import UserDetails from './container/UserDetails'
 
@@ -25,8 +27,10 @@ class Routes extends Component {
           <Route path='/Menu' component={Products} />
           <Route path='/userdetails' component={UserDetails} />
 
-          {/* Update Food */}
+          {/*  Fooditem */}
           <Route path='/updatefood/:id' component={UpdateFood} />
+          <Route path='/addfooditem' component={AddFood} />
+
 
 
 
