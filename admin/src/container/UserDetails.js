@@ -70,10 +70,10 @@ class UserDetails extends Component{
                          <td>{userlist.name}</td>
                          <td>{userlist.email}</td>
                          <td>{userlist.address}</td>
-                         <td>{userlist.DOB}</td>
+                         <td>{userlist.dob}</td>
                          <td>{userlist.gender}</td>
                          {/* <td><Image src={'http://localhost:100/images/' + menulist.menu_image}  width='40'/></td> */}
-                         <td><Button>Update</Button>| <button>Delete</button></td>
+                         <td><Button>Update</Button>| <Button>Delete</Button></td>
      
                         
                          

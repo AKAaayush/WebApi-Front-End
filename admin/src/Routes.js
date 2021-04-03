@@ -6,6 +6,8 @@ import FoodItems from './container/FootItems';
 import Products from './container/Menu';
 import { Component } from 'react';
 import Login from './container/Login'
+import UpdateFood from './container/Food/Update'
+
 import UserDetails from './container/UserDetails'
 
 // import Navbar from './components/Navbar';
@@ -22,6 +24,11 @@ class Routes extends Component {
           <Route path='/fooditems' component={FoodItems} />
           <Route path='/Menu' component={Products} />
           <Route path='/userdetails' component={UserDetails} />
+
+          {/* Update Food */}
+          <Route path='/updatefood/:id' component={UpdateFood} />
+
+
 
         </Switch>
       </Router>

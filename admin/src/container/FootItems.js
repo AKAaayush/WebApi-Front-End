@@ -1,10 +1,9 @@
 // import React from 'react';
 import { Component } from 'react';
-import BootstrapTable from 'react-bootstrap-table-next'
+import { Link } from 'react-router-dom';
 // import pagiantionFactory from 'react-bootstrap-table2-paginator'
 import Navbar from '../components/Navbar';
 import axios from 'axios'
-import paginationFactory from 'react-bootstrap-table2-paginator';
 import {  Image } from "react-bootstrap";
 //Bootstrap and jQuery libraries
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -18,9 +17,9 @@ class Reports extends Component {
 
   state = {
     fooditem: [],
-    config : {
-      header : {'authorization': `Bearer ${localStorage.getItem('token')}`}
-  }
+  //   config : {
+  //     header : {'authorization': `Bearer ${localStorage.getItem('token')}`}
+  // }
 
 }
   componentDidMount() {
@@ -72,7 +71,7 @@ class Reports extends Component {
                     <td>{fooditem.food_desc}</td>
                     <td>{fooditem.food_price}</td>
                     <td><Image src={'http://localhost:100/images/' + fooditem.food_image}  width='40'/></td>
-                    <td><button>Update</button>| <button>Delete</button></td>
+                    <td><Link to ={'updatefood/'+ fooditem._id}>Update</Link>| <button>Delete</button></td>
 
                    
                     
