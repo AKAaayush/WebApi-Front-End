@@ -1,0 +1,25 @@
+.login{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    margin-top : 10px;
+    height: auto;
+    width: 400px;
+   
+    
+}
+.logtext{
+    text-align: center;
+    
+}
+
+.logtext i {
+    color: #126bb8;
+
+}
+
+button{
+    background: linear-gradient(90deg, rgb(53 53 56),rgb(38 29 202)100%);
+
+}
