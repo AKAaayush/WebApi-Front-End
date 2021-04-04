@@ -18,7 +18,7 @@ class Navbar extends Component{
         window.location.href ="/"
             }
     render(){
-        if (localStorage.getItem('token')) {
+        if (localStorage.getItem('userToken')) {
             var login=<>
             
             <h1 className ="navbar-logo">RMS<i className ="fab fa-react"></i></h1>

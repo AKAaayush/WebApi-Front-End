@@ -67,8 +67,6 @@ class Employee extends Component{
                 {this.state.data.map((result) => {
                   return (
                     <tr >
-                        
-                        
                         <td>{result.employee_name}</td>
                         <td>{result.employee_address}</td>
                         <td>{result.employee_phone}</td>
