@@ -18,14 +18,15 @@ class Reports extends Component {
 
   state = {
     fooditem: [],
-  //   config : {
-  //     header : {'authorization': `Bearer ${localStorage.getItem('token')}`}
-  // }
+  config: {
+    headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
+  }
 
 }
 componentDidMount() {
   //Get all users details and table columns names in bootstrap table
-  axios.get('http://localhost:100/fooditem/display')
+  console.log(this.state.config)
+  axios.get('http://localhost:100/fooditem/display', this.state.config)
   .then((response) => {
       console.log(response)
       this.setState({

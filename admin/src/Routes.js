@@ -10,6 +10,8 @@ import Employee from './container/employee'
 import UpdateFood from './container/Food/Update'
 import AddFood from './container/Food/Add'
 import UpdateMenu from './container/Menu/Update'
+import AddMenu from './container/Menu/Add'
+
 
 
 
@@ -38,6 +40,8 @@ class Routes extends Component {
 
           {/* Menu */}
           <Route path='/updatemenu/:id' component={UpdateMenu} />
+          <Route path='/addmenu' component={AddMenu} />
+
 
 
 

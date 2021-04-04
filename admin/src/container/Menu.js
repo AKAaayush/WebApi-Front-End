@@ -44,6 +44,17 @@ componentDidMount() {
   );
 }, 100);
 }
+
+deleteMenu = (id) => {
+  axios.delete('http://localhost:100/menu/delete/' + id)
+      .then((response) => {
+          console.log(response)
+      })
+      .catch((err) => {
+          console.log(err.response)
+      })
+
+}
 // componentWillUnmount() {
 //   this.fooditem.DataTable.destroy(true)
 // }
@@ -90,7 +101,7 @@ componentDidMount() {
     <div className="MainDiv" style={{textAlign:"center"}}>
        <Navbar/>
     
-          <h3>Food Item</h3>
+          <h3>Food Menu</h3>
     
       
       <div className="container">
@@ -116,7 +127,7 @@ componentDidMount() {
                     <td>{menulist.menu_desc}</td>
                     <td>{menulist.menu_price}</td>
                     <td><Image src={'http://localhost:100/images/' + menulist.menu_image}  width='40'/></td>
-                    <td><Link to ={'updatemenu/'+ menulist._id}>Update</Link>| <button>Delete</button></td>
+                    <td><Link to ={'updatemenu/'+ menulist._id}>Update</Link>| <a href ='/menu'  onClick={this.deleteMenu.bind(this, menulist._id)}>Delete</a></td>
 
                    
                     
@@ -127,7 +138,7 @@ componentDidMount() {
             </tbody>
             
         </table>
-          
+        <Link to="/addmenu">Add</Link>
         </div>
       </div>
   );

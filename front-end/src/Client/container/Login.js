@@ -27,7 +27,7 @@ class Login extends Component {
         console.log(response);
         this.setState({ loginSuccess: true })
         //token save cookies 
-        localStorage.setItem('token', response.data.token)
+        localStorage.setItem('userToken', response.data.token)
       })
       .catch((err) => {
         console.log(err.response)
