@@ -42,32 +42,32 @@ class Navbar extends Component {
                   
                 </li>
                 <li class="has-subnav">
-                < a href= '/Menu'>
+                < Link to = '/Menu'>
                         <i class="fa fa-book fa-2x"style={mystyle} ></i>
                        
                         
                         <span class="nav-text">
                             Menus
                         </span>
-                        </a>
+                        </ Link>
                     
                 </li>
                 <li class="has-subnav">
-                    <a href="/fooditems">
+                    <Link to="/fooditems">
                        <i class="fa fa-hamburger fa-2x"style={mystyle}></i>
                         <span class="nav-text">
                             Food Items
                         </span>
-                    </a>
+                    </Link>
                     
                 </li>
                 <li class="has-subnav">
-                    <a href="/userdetails">
+                    <Link to="/userdetails">
                        <i class="fa fa-users fa-2x"style={mystyle}></i>
                         <span class="nav-text">
                             User
                         </span>
-                    </a>
+                    </Link>
                    
                 </li>
                 <li>
@@ -79,12 +79,12 @@ class Navbar extends Component {
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <Link to="/employeedetails">
                         <i class="fa fa-user-tie fa-2x"style={mystyle}></i>
                         <span class="nav-text">
                            Staff
                         </span>
-                    </a>
+                    </Link>
                 </li>
                 <li>
                    <a href="#">

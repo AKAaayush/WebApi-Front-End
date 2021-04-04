@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import { Component } from 'react';
 import Navbar from '../components/Navbar';
 import {  Image, Button } from "react-bootstrap";
@@ -22,23 +23,30 @@ class Products extends Component {
  
 
 componentDidMount() {
-  //initialize datatable
-  $(document).ready(function () {
-    $('#example').DataTable();
-});
-
-  //fetch data
+  //Get all users details and table columns names in bootstrap table
   axios.get('http://localhost:100/menu/display')
-          .then((response) => {
-              console.log(response)
-              this.setState({
+  .then((response) => {
+      console.log(response)
+      this.setState({
 
-                  menulist: response.data.data
-              })
-          })
+        menulist: response.data.data
+      })
+  })
 
-          .catch()
+  .catch()
+    
+  //init Datatable  
+  setTimeout(()=>{                        
+  $('#example').DataTable(
+    {
+      "lengthMenu": [[5, 10, 15, -1], [5, 10, 15, "All"]]
+    }
+  );
+}, 100);
 }
+// componentWillUnmount() {
+//   this.fooditem.DataTable.destroy(true)
+// }
   // const [menu,setmenu] = useState([])
   // const [loading, setLoading] = useState(false);
 
@@ -108,7 +116,7 @@ componentDidMount() {
                     <td>{menulist.menu_desc}</td>
                     <td>{menulist.menu_price}</td>
                     <td><Image src={'http://localhost:100/images/' + menulist.menu_image}  width='40'/></td>
-                    <td><Button>Update</Button>| <button>Delete</button></td>
+                    <td><Link to ={'updatemenu/'+ menulist._id}>Update</Link>| <button>Delete</button></td>
 
                    
                     
