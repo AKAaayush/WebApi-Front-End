@@ -1,5 +1,5 @@
 import React, { useState,state } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 // import { SidebarData } from './SidebarData';
 import './Navbar.css';
 import { Component } from 'react';
@@ -95,12 +95,12 @@ class Navbar extends Component {
                     </a>
                 </li>
                 <li>
-                   <a href="#">
+                   <Link to = '/profile'>
                         <i class="fa fa-map-marker fa-2x"style={mystyle}></i>
                         <span class="nav-text">
-                            Maps
+                            Profile
                         </span>
-                    </a>
+                    </Link>
                 </li>
                 <li>
                     <a href="#">
@@ -127,9 +127,15 @@ class Navbar extends Component {
 
 
   }
+
+  else{
+      var auth =
+      <Redirect to = "/"></Redirect>
+  }
   return (
     <>
       {adminlogin}
+      {auth}
     </>
   );
 }

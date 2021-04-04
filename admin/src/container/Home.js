@@ -85,65 +85,7 @@ componentDidMount() {
       <>
         <Navbar />
         <div className="container">
-        {/* <div> <p> { this.state.longeur}</p> </div> */}
-        <div class="row">
-              <div class="col-md-12 grid-margin">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="row">
-                      <div class="col-lg-3 col-md-6">
-                        <div class="d-flex">
-                          <div class="wrapper">
-                            <h3 class="mb-0 font-weight-semibold">32,451</h3>
-                            <h5 class="mb-0 font-weight-medium text-primary">Visits</h5>
-                            <p class="mb-0 text-muted">+14.00(+0.50%)</p>
-                          </div>
-                          <div class="wrapper my-auto ml-auto ml-lg-4"><div class="chartjs-size-monitor" style={{position: "absolute", inset: "0px", overflow: "hidden", PointerEvent: "none", visibility: "hidden",zIndex: "-1"}}><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
-                            <canvas height="62" width="125" id="stats-line-graph-1" class="chartjs-render-monitor" style="display: block; height: 50px; width: 100px;"></canvas>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-3 col-md-6 mt-md-0 mt-4">
-                        <div class="d-flex">
-                          <div class="wrapper">
-                            <h3 class="mb-0 font-weight-semibold">15,236</h3>
-                            <h5 class="mb-0 font-weight-medium text-primary">Impressions</h5>
-                            <p class="mb-0 text-muted">+138.97(+0.54%)</p>
-                          </div>
-                          <div class="wrapper my-auto ml-auto ml-lg-4"><div class="chartjs-size-monitor" style="position: absolute; inset: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
-                            <canvas height="62" width="125" id="stats-line-graph-2" class="chartjs-render-monitor" style="display: block; height: 50px; width: 100px;"></canvas>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-3 col-md-6 mt-md-0 mt-4">
-                        <div class="d-flex">
-                          <div class="wrapper">
-                            <h3 class="mb-0 font-weight-semibold">7,688</h3>
-                            <h5 class="mb-0 font-weight-medium text-primary">Conversation</h5>
-                            <p class="mb-0 text-muted">+57.62(+0.76%)</p>
-                          </div>
-                          <div class="wrapper my-auto ml-auto ml-lg-4"><div class="chartjs-size-monitor" style="position: absolute; inset: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
-                            <canvas height="62" width="125" id="stats-line-graph-3" class="chartjs-render-monitor" style="display: block; height: 50px; width: 100px;"></canvas>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-3 col-md-6 mt-md-0 mt-4">
-                        <div class="d-flex">
-                          <div class="wrapper">
-                            <h3 class="mb-0 font-weight-semibold">1,553</h3>
-                            <h5 class="mb-0 font-weight-medium text-primary">Downloads</h5>
-                            <p class="mb-0 text-muted">+138.97(+0.54%)</p>
-                          </div>
-                          <div class="wrapper my-auto ml-auto ml-lg-4"><div class="chartjs-size-monitor" style="position: absolute; inset: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
-                            <canvas height="62" width="125" id="stats-line-graph-4" class="chartjs-render-monitor" style="display: block; height: 50px; width: 100px;"></canvas>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div> <p> { this.state.longeur}</p> </div>
         </div>
       </>
 

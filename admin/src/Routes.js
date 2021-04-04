@@ -11,7 +11,7 @@ import UpdateFood from './container/Food/Update'
 import AddFood from './container/Food/Add'
 import UpdateMenu from './container/Menu/Update'
 import AddMenu from './container/Menu/Add'
-
+import UserProfile from './container/UserProfile'
 
 
 
@@ -32,6 +32,8 @@ class Routes extends Component {
           <Route path='/Menu' component={Products} />
           <Route path='/userdetails' component={UserDetails} />
           <Route path='/employeedetails' component={Employee} />
+          <Route path='/profile' component={UserProfile} />
+        
 
 
           {/*  Fooditem */}
