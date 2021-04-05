@@ -23,16 +23,19 @@ class Login extends Component {
   submitLogin = (e) => {
     e.preventDefault();
     axios.post("http://localhost:100/user/login", this.state)
-      .then((response) => {
-        console.log(response);
-        this.setState({ loginSuccess: true })
-        //token save cookies 
-        localStorage.setItem('userToken', response.data.token)
-      })
-      .catch((err) => {
-        console.log(err.response)
-      })
+    .then((response) => {
+      this.setState({ loginSuccess: true })
+      localStorage.setItem('userToken', response.data.token)
+
+    }).catch((err) =>{
+    
+     this.setState({ loginSuccess: false })
+     localStorage.setItem('NoauthToken')
+    
+    } )
+  this.setState({ email: '', password: '' })
   }
+  
 
 
   render() {

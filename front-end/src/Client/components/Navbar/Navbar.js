@@ -1,21 +1,29 @@
 import React, { Component } from 'react';
 //import { Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-
+import axios from "axios";
 //import {MenuItems} from "./MenuItems"
 import './Navbar.css'
 
 class Navbar extends Component{
     state = {
-        clicked : false
+        clicked : false,
+        config: {
+            headers: { 'Authorization': `Bearer ${localStorage.getItem('userToken')}` }
+          }
        
     }
     handleClick = () =>{
             this.setState({clicked : !this.state.clicked})
     }
     logout = (e) => {
-        localStorage.removeItem('token')
-        window.location.href ="/"
+        axios.delete('http://localhost:100/logout/user', this.state.config)
+        .then((response) => {
+    e.preventDefault();
+    localStorage.removeItem('userToken');
+    localStorage.removeItem('cart');
+    this.props.history.push('/')
+  })
             }
     render(){
         if (localStorage.getItem('userToken')) {
@@ -44,7 +52,7 @@ class Navbar extends Component{
                             <Link to = "/userprofile" className="nav-links" >Userprofile</Link>
                         </li>
                         <li >
-                            <Link to = "/" className="nav-links" onClick={this.logout} >Logout</Link>
+                            <a href = "/" className="nav-links" onClick={this.logout} >Logout</a>
                         </li>
                         
 
