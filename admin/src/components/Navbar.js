@@ -1,15 +1,27 @@
 import React, { useState,state } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 // import { SidebarData } from './SidebarData';
 import './Navbar.css';
+import axios from "axios";
 import { Component } from 'react';
 
 class Navbar extends Component {
-  logout = (e) => {
-    localStorage.removeItem('token')
-    window.location.href = "/"
-  }
-
+    state = {
+        
+        config: {
+            headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
+          }
+       
+    }
+    logout = (e) => {
+        axios.delete('http://localhost:100/logout/admin', this.state.config)
+            .then((response) => {
+                e.preventDefault()
+            localStorage.removeItem('token');
+            this.props.history.push('/')
+        
+          })
+     }
   
   render(){
     const mystyle = {
@@ -42,32 +54,32 @@ class Navbar extends Component {
                   
                 </li>
                 <li class="has-subnav">
-                < a href= '/Menu'>
+                < Link to = '/Menu'>
                         <i class="fa fa-book fa-2x"style={mystyle} ></i>
                        
                         
                         <span class="nav-text">
                             Menus
                         </span>
-                        </a>
+                        </ Link>
                     
                 </li>
                 <li class="has-subnav">
-                    <a href="/fooditems">
+                    <Link to="/fooditems">
                        <i class="fa fa-hamburger fa-2x"style={mystyle}></i>
                         <span class="nav-text">
                             Food Items
                         </span>
-                    </a>
+                    </Link>
                     
                 </li>
                 <li class="has-subnav">
-                    <a href="/userdetails">
+                    <Link to="/userdetails">
                        <i class="fa fa-users fa-2x"style={mystyle}></i>
                         <span class="nav-text">
                             User
                         </span>
-                    </a>
+                    </Link>
                    
                 </li>
                 <li>
@@ -79,12 +91,12 @@ class Navbar extends Component {
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <Link to="/employeedetails">
                         <i class="fa fa-user-tie fa-2x"style={mystyle}></i>
                         <span class="nav-text">
                            Staff
                         </span>
-                    </a>
+                    </Link>
                 </li>
                 <li>
                    <a href="#">
@@ -95,12 +107,12 @@ class Navbar extends Component {
                     </a>
                 </li>
                 <li>
-                   <a href="#">
+                   <Link to = '/profile'>
                         <i class="fa fa-map-marker fa-2x"style={mystyle}></i>
                         <span class="nav-text">
-                            Maps
+                            Profile
                         </span>
-                    </a>
+                    </Link>
                 </li>
                 <li>
                     <a href="#">
@@ -114,12 +126,12 @@ class Navbar extends Component {
 
             <ul class="logout">
                 <li>
-                   <Link to= '/'onClick={this.logout}>
+                   <a href= '/'onClick={this.logout}>
                          <i class="fa fa-power-off fa-2x"style={mystyle}></i>
                         <span class="nav-text">
                             Logout
                         </span>
-                    </Link>
+                    </a>
                 </li>  
             </ul>
         </nav>
@@ -127,9 +139,15 @@ class Navbar extends Component {
 
 
   }
+
+  else{
+      var auth =
+      <Redirect to = "/"></Redirect>
+  }
   return (
     <>
       {adminlogin}
+      {auth}
     </>
   );
 }

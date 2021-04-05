@@ -1,12 +1,13 @@
 import { Component } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 class OurFood extends Component{
     state = {
         fooditem: [],
-           config : {
-      header : {'authorization': `Bearer ${localStorage.getItem('token')}`}
-  }
+        config: {
+            headers: { 'Authorization': `Bearer ${localStorage.getItem('userToken')}` }
+          }
 
     }
 
@@ -22,6 +23,8 @@ class OurFood extends Component{
 
             .catch()
     }
+
+   
     render(){
         return(
     <section className="content-shop-page">
@@ -43,7 +46,7 @@ class OurFood extends Component{
 						</div>
 						<a href="product-detail.html"><h4 class="name-item">{fooditem.food_name}</h4></a>
 						<p class="price-item">{fooditem.food_price}</p>
-						<button class="btn-with-bg add-to-cart">ADD TO CART</button>
+						<Link to ={'food/' + fooditem.food_name}  class="btn-with-bg add-to-cart">ADD TO CART</Link>
 					</div>
 				</div>
             

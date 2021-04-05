@@ -9,6 +9,10 @@ import UpdateMenu from './Client/container/UpdateMenu'
 import FoodDetails from './Client/container/FoodDetails'
 import {Route,BrowserRouter, Switch} from 'react-router-dom'
  import Navbar from './Client/components/Navbar/Navbar'
+ import ViewFood from './Client/container/ViewFood'
+ import CartView from './Client/container/CartView'
+
+
 import { Nav } from "react-bootstrap";
 
 
@@ -28,8 +32,12 @@ import { Nav } from "react-bootstrap";
             <Route path = '/updatemenu/:id' component={UpdateMenu}></Route>
             {/* <Route path = '/login' component = {Login}></Route> */}
             <Route path = '/userprofile' component = {UserProfile}></Route>
-            <Route path = '/food/:menu_name' component = {FoodDetails}></Route>
+            <Route path = '/menu/:menu_name' component = {FoodDetails}></Route>
             <Route path = '/Login' component = {Login}></Route>
+            <Route path = '/food/:food_name' component = {ViewFood}></Route>
+            <Route path = '/mycart' component = {CartView}></Route>
+
+
 
 
 

@@ -18,29 +18,38 @@ class Reports extends Component {
 
   state = {
     fooditem: [],
-  //   config : {
-  //     header : {'authorization': `Bearer ${localStorage.getItem('token')}`}
-  // }
+  config: {
+    headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
+  }
 
 }
-  componentDidMount() {
-    //initialize datatable
-    $(document).ready(function () {
-        $('#example').DataTable();
-    });
+componentDidMount() {
+  //Get all users details and table columns names in bootstrap table
+  console.log(this.state.config)
+  axios.get('http://localhost:100/fooditem/display', this.state.config)
+  .then((response) => {
+      console.log(response)
+      this.setState({
 
-    //fetch data
-    axios.get('http://localhost:100/fooditem/display')
-            .then((response) => {
-                console.log(response)
-                this.setState({
+        fooditem: response.data.data
+      })
+  })
 
-                    fooditem: response.data.data
-                })
-            })
+  .catch()
+    
+  //init Datatable  
+  setTimeout(()=>{                        
+  $('#example').DataTable(
+    {
+      "lengthMenu": [[5, 10, 15, -1], [5, 10, 15, "All"]]
+    }
+  );
+}, 100);
+}
 
-            .catch()
- }
+//  componentWillUnmount() {
+//    this.$el.DataTable.destroy(true)
+//  }
  deleteFood = (id) => {
   axios.delete('http://localhost:100/food/delete/' + id)
       .then((response) => {

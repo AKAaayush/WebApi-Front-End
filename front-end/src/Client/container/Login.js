@@ -3,14 +3,18 @@ import axios from 'axios'
 import {  Redirect } from 'react-router-dom';
 //import { Container } from "react-bootstrap";
 import  '../components/Navbar/login.css'
-
 class Login extends Component {
-
-  state = {
+  constructor(props) {
+    super(props)
+  this.state = {
     email: '',
     password: '',
-    loginSuccess: false
+    loginSuccess: false,
+    config: {
+      headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
   }
+  }
+} 
 
   // form handler
   changeHandler = (e) => {
@@ -23,16 +27,21 @@ class Login extends Component {
   submitLogin = (e) => {
     e.preventDefault();
     axios.post("http://localhost:100/user/login", this.state)
-      .then((response) => {
-        console.log(response);
-        this.setState({ loginSuccess: true })
-        //token save cookies 
-        localStorage.setItem('token', response.data.token)
-      })
-      .catch((err) => {
-        console.log(err.response)
-      })
+    .then((response) => {
+      localStorage.setItem('userToken', response.data.token)
+      this.setState({ loginSuccess: true })
+      window.location.reload();
+
+    }).catch((err) =>{
+    
+     this.setState({ loginSuccess: false })
+     localStorage.setItem('NoauthToken')
+    
+    } )
+  this.setState({ email: '', password: '' })
+  
   }
+  
 
 
   render() {
@@ -68,7 +77,9 @@ class Login extends Component {
 
       
       // </div>
+      
 <div className = "login">
+{/* {this.state.loginSuccess == false ? <Error message="Email or password incorrect" /> : null} */}
   <div className = "logtext">
     <h1><i class="fa fa-user" aria-hidden="true"></i></h1>
     <h1>Login</h1>

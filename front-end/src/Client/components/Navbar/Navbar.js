@@ -1,24 +1,47 @@
 import React, { Component } from 'react';
 //import { Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-
+import axios from "axios";
 //import {MenuItems} from "./MenuItems"
 import './Navbar.css'
 
 class Navbar extends Component{
     state = {
-        clicked : false
+        name : '',
+        user : {},
+        clicked : false,
+        config: {
+            headers: { 'Authorization': `Bearer ${localStorage.getItem('userToken')}` }
+          }
        
     }
     handleClick = () =>{
             this.setState({clicked : !this.state.clicked})
     }
+    componentDidMount() {
+        axios.get('http://localhost:100/checkuserlogin', this.state.config)
+            .then((response) => {
+                this.setState({
+                    user: response.data,
+                    name:response.data.name,
+                    
+                   
+                })
+               
+
+            })
+    }
     logout = (e) => {
-        localStorage.removeItem('token')
-        window.location.href ="/"
+axios.delete('http://localhost:100/logout/user', this.state.config)
+    .then((response) => {
+        e.preventDefault()
+    localStorage.removeItem('userToken');
+    this.props.history.push('/')
+
+  })
             }
     render(){
-        if (localStorage.getItem('token')) {
+        if (localStorage.getItem('userToken')) {
             var login=<>
             
             <h1 className ="navbar-logo">RMS<i className ="fab fa-react"></i></h1>
@@ -41,10 +64,10 @@ class Navbar extends Component{
                             <Link to = "/Aboutus" className="nav-links" >About-US</Link>
                         </li>
                         <li >
-                            <Link to = "/userprofile" className="nav-links" >Userprofile</Link>
+                            <Link to = "/userprofile" className="nav-links" >{this.state.user.name}</Link>
                         </li>
                         <li >
-                            <Link to = "/" className="nav-links" onClick={this.logout} >Logout</Link>
+                            <a href = "/" className="nav-links" onClick={this.logout} >Logout</a>
                         </li>
                         
 

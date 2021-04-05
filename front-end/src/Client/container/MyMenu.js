@@ -86,7 +86,7 @@ class MyMenu extends Component {
                                                 </div>
                                                 <div class="price-food col-12 col-sm-2">{menu.menu_price}</div>
                                                 <Link to={'updatemenu/' + menu._id} >Update</Link>
-                                                <Link to={'food/' + menu.menu_name} >Update</Link>
+                                                <Link to={'menu/' + menu.menu_name} >Update</Link>
                                             </div>
                                         </div>
 

@@ -19,26 +19,28 @@ class UserDetails extends Component{
     
     }
 }
-    componentDidMount() {
-        //initialize datatable
-        $(document).ready(function () {
-            $('#example').DataTable();
-        });
+componentDidMount() {
+    //Get all users details and table columns names in bootstrap table
+    axios.get('http://localhost:100/user/display')
+    .then((response) => {
+        console.log(response)
+        this.setState({
+  
+            userlist: response.data
+        })
+    })
+  
+    .catch()
       
-        //fetch data
-        axios.get('http://localhost:100/user/display')
-        
-                .then((response) => {
-                
-                    console.log(response)
-                    this.setState({
-      
-                        userlist: response.data
-                    })
-                })
-      
-                .catch()
+    //init Datatable  
+    setTimeout(()=>{                        
+    $('#example').DataTable(
+      {
+        "lengthMenu": [[ 10, 15, -1], [ 10, 15, "All"]]
       }
+    );
+  }, 100);
+  }
     render(){
         
           
@@ -46,7 +48,7 @@ class UserDetails extends Component{
             <div className="MainDiv" style={{textAlign:"center"}}>
             <Navbar/>
          
-               <h3>Food Item</h3>
+               <h3>User Details</h3>
          
            
            <div className="container">
