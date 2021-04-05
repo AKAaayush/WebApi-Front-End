@@ -74,7 +74,7 @@ class Employee extends Component{
                         <td>{result.employee_address}</td>
                         <td>{result.employee_phone}</td>
                         <td><Image src={'http://localhost:100/images/' + result.employee_image}  width='40'/></td>
-                        <td><Link to ="#">Update</Link>| <a href ='#'  >Delete</a></td>
+                        <td><Link to ={'updatestaff/'+ result._id}>Update</Link>| <a href ='#'  >Delete</a></td>
 
                       
                       </tr>
