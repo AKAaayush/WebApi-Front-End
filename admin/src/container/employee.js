@@ -57,10 +57,9 @@ class Employee extends Component{
             <thead>
                 <tr>
                     <th>Name</th>
+                    <th>Email</th>
                     <th>Address</th>
                     <th>Phone</th>
-                    <th>Gender</th>
-                    <th>DOB</th>
                     <th>Image</th>
                     <th>Action</th>
                     
@@ -71,10 +70,9 @@ class Employee extends Component{
                   return (
                     <tr >
                         <td>{result.employee_name}</td>
+                        <td>{result.employee_email}</td>
                         <td>{result.employee_address}</td>
                         <td>{result.employee_phone}</td>
-                        <td>{result.employee_gender}</td>
-                        <td>{result.employee_dob}</td>
                         <td><Image src={'http://localhost:100/images/' + result.employee_image}  width='40'/></td>
                         <td><Link to ="#">Update</Link>| <a href ='#'  >Delete</a></td>
 
@@ -88,6 +86,7 @@ class Employee extends Component{
               </table>
                
               </div>
+              <Link to="/addstaff">Add</Link>
             </div>
         )
     }
