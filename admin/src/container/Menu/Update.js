@@ -17,11 +17,11 @@ changeHandler = (e)=>{
     })
 }
 
-// fileHandler = (e)=> {
-//     this.setState({
-//         menu_image : e.target.files[0]
-//     })
-// }
+fileHandler = (e)=> {
+    this.setState({
+        menu_image : e.target.files[0]
+    })
+}
 
 componentDidMount(){
     axios.get('http://localhost:100/menu/single/' + this.state.id)
@@ -45,8 +45,14 @@ componentDidMount(){
 
 updateMenuData = (e)=>{
     e.preventDefault()
+    const data = new FormData()
     
-    axios.put('http://localhost:100/menu/update/:id', this.state)
+    data.append('menu_name' , this.state.menu_name)
+    data.append('menu_price',this.state.menu_price)
+    data.append('menu_title',this.state.menu_title)
+    data.append('menu_desc', this.state.menu_desc)
+    data.append('menu_image', this.state.menu_image)
+    axios.put('http://localhost:100/menu/update/' + this.state.id, data)
     .then((response)=>{
         console.log(response)
     })
@@ -95,7 +101,7 @@ updateMenuData = (e)=>{
 
                                         <div class="form-group">
                                             <label class="form-control-label">Menu Image</label>
-                                            <input type="file" class="form-control" name="food_image"  placeholder="Password"  onChange={this.changeHandler} i />
+                                            <input type="file" class="form-control" name="food_image"  placeholder="Password"  onChange={this.fileHandler} i />
                                         </div>
 
 

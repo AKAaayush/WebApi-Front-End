@@ -7,6 +7,8 @@ import './Navbar.css'
 
 class Navbar extends Component{
     state = {
+        name : '',
+        user : {},
         clicked : false,
         config: {
             headers: { 'Authorization': `Bearer ${localStorage.getItem('userToken')}` }
@@ -16,13 +18,26 @@ class Navbar extends Component{
     handleClick = () =>{
             this.setState({clicked : !this.state.clicked})
     }
+    componentDidMount() {
+        axios.get('http://localhost:100/checkuserlogin', this.state.config)
+            .then((response) => {
+                this.setState({
+                    user: response.data,
+                    name:response.data.name,
+                    
+                   
+                })
+               
+
+            })
+    }
     logout = (e) => {
-        axios.delete('http://localhost:100/logout/user', this.state.config)
-        .then((response) => {
-    e.preventDefault();
+axios.delete('http://localhost:100/logout/user', this.state.config)
+    .then((response) => {
+        e.preventDefault()
     localStorage.removeItem('userToken');
-    localStorage.removeItem('cart');
     this.props.history.push('/')
+
   })
             }
     render(){
@@ -49,7 +64,7 @@ class Navbar extends Component{
                             <Link to = "/Aboutus" className="nav-links" >About-US</Link>
                         </li>
                         <li >
-                            <Link to = "/userprofile" className="nav-links" >Userprofile</Link>
+                            <Link to = "/userprofile" className="nav-links" >{this.state.user.name}</Link>
                         </li>
                         <li >
                             <a href = "/" className="nav-links" onClick={this.logout} >Logout</a>

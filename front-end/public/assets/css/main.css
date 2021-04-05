@@ -767,6 +767,8 @@ iframe {
 	width: 100%;
 	padding-top: 185px;
     padding-bottom: 165px;
+	border-top: 1px solid #e1e1e1;
+	border-bottom: 1px solid #e1e1e1;
     color: white;
     text-align: center;
     -webkit-transition: all 0.4s;

@@ -26,6 +26,7 @@ class Login extends Component {
     .then((response) => {
       this.setState({ loginSuccess: true })
       localStorage.setItem('userToken', response.data.token)
+      window.location.reload();
 
     }).catch((err) =>{
     
@@ -34,6 +35,7 @@ class Login extends Component {
     
     } )
   this.setState({ email: '', password: '' })
+  
   }
   
 
