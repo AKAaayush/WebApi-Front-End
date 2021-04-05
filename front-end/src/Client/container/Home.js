@@ -1,9 +1,64 @@
 import React, { Component } from "react";
 //var Carousel = require('react-responsive-carousel').Carousel;
 import OurFood from './OurFood'
-
+import axios from 'axios'
 class Home extends Component{
+     constructor(){
+       super();
+       this.state = {
+         'date':'',
+         'time': '',
+         'user_email':'',
+         'people':'',
+         config: {
+          headers: { 'Authorization': `Bearer ${localStorage.getItem('userToken')}` }
+        }
+       }
+     }
+     inputHandler=(e)=>{
+      this.setState({
+          [e.target.name] : e.target.value
+      })
+  }
+  componentDidMount(){
+    axios.get('http://localhost:100/checkuserlogin', this.state.config)
+    .then((response)=>
+    this.setState({
+        // user: response.data,
+        // name : response.data.name,
+        // address : response.data.address,
+        // email : response.data.email
+    })
+    )
+
+    .catch((err)=>{
+        console.log(err.response)
+    })
+    
+}
+
+  addTable = (e) =>{
+    e.preventDefault();
+    const data = {
+        date : this.state.date,
+        time : this.state.time,
+        user_email : this.state.user_email,
+        people : this.state.people
+    }
+
+  
+    axios.post('http://localhost:100/addtable',data, this.state.config)
      
+    .then((response)=>{
+        console.log(response)
+      
+    })
+    .catch((err)=>{
+        console.log(err.response)
+    })
+
+      
+}
         render(){ 
           if (localStorage.getItem('userToken')) {
             var verify= 
@@ -20,35 +75,35 @@ class Home extends Component{
           <div class="wrap-input-find col-12 col-sm-12 col-md-10">
             <div class="input-find row">
               <div class="col-10 col-sm-5 col-md-2">
-                <select class="chose-people" name="chose-people" style={{    width: '100%', height: '100%'}}>
-                  <option>1 people</option>
-                  <option>2 people</option>
-                  <option>3 people</option>
-                  <option>4 people</option>
-                  <option>5 people</option>
-                  <option>6 people</option>
+                <select class="chose-people" name="people"  style={{    width: '100%', height: '100%'}} onChange={this.inputHandler}>
+                  <option name="people" >1 people</option>
+                  <option name="people" >2 people</option>
+                  <option name="people" >3 people</option>
+                  <option name="people" >4 people</option>
+                  <option name="people" >5 people</option>
+                  <option name="people" >6 people</option>
                 </select>
               </div>
 
               <div class="col-10 col-sm-8 col-md-3 chose-calendar">
-                <input class="my-calendar" type="date" name="calender"/>
+                <input class="my-calendar" type="date" name="date" onChange={this.inputHandler}/>
               </div>
               
 
               <div class="col-10 col-sm-8 col-md-2">
-                <select class="chose-time" name="chose-time" style={{    width: '100%', height: '100%'}}>
-                  <option>7:00 PM</option>
-                  <option>8:00 PM</option>
-                  <option>9:00 PM</option>
+                <select class="chose-time" name="time" onChange={this.inputHandler} style={{    width: '100%', height: '100%'}}>
+                  <option name="time" >7:00 PM</option>
+                  <option name="time" >8:00 PM</option>
+                  <option name="time" >9:00 PM</option>
                 </select>
               </div>
               <div class="col-10 col-sm-8 col-md-5 chose-calendar">
-                <input class="my-calendar" type="email" placeholder="Email" name="calender"/>
+                <input class="my-calendar" type="email" placeholder="Email" name="user_email" onChange={this.inputHandler}/>
               </div>
             </div>
           </div>
           <div class="col-5 col-sm-3 col-md-2">
-            <button class="btn-find-table">FIND A TABLE</button>
+            <button class="btn-find-table" onClick={this.addTable}>FIND A TABLE</button>
           </div>
         </div>
       </form>

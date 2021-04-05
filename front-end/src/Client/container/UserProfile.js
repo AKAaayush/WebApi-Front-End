@@ -118,7 +118,7 @@ state = {
                             
                             <div class="form-group col-md-6">
                                 <label for="inputAddress5">Phone Number</label>
-                                <input className="form-control" name="name" type="text" value={this.state.phone} onChange={this.handleChange} />
+                                <input className="form-control" name="phone" type="text" value={this.state.phone} onChange={this.handleChange} />
                             </div>
                             </div>
                             

@@ -2,14 +2,26 @@ import React, { useState,state } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 // import { SidebarData } from './SidebarData';
 import './Navbar.css';
+import axios from "axios";
 import { Component } from 'react';
 
 class Navbar extends Component {
-  logout = (e) => {
-    localStorage.removeItem('token')
-    window.location.href = "/"
-  }
-
+    state = {
+        
+        config: {
+            headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
+          }
+       
+    }
+    logout = (e) => {
+        axios.delete('http://localhost:100/logout/admin', this.state.config)
+            .then((response) => {
+                e.preventDefault()
+            localStorage.removeItem('token');
+            this.props.history.push('/')
+        
+          })
+     }
   
   render(){
     const mystyle = {
@@ -114,12 +126,12 @@ class Navbar extends Component {
 
             <ul class="logout">
                 <li>
-                   <Link to= '/'onClick={this.logout}>
+                   <a href= '/'onClick={this.logout}>
                          <i class="fa fa-power-off fa-2x"style={mystyle}></i>
                         <span class="nav-text">
                             Logout
                         </span>
-                    </Link>
+                    </a>
                 </li>  
             </ul>
         </nav>

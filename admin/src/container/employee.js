@@ -1,10 +1,12 @@
 //Bootstrap and jQuery libraries
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'jquery/dist/jquery.min.js';
+import { Link } from 'react-router-dom';
 //Datatable Modules
 import "datatables.net-dt/js/dataTables.dataTables";
 import "datatables.net-dt/css/jquery.dataTables.min.css";
 import $ from 'jquery'; 
+import {  Image } from "react-bootstrap";
 import Navbar from '../components/Navbar';
 //For API Requests
 import axios from 'axios';
@@ -46,20 +48,21 @@ class Employee extends Component{
     render(){
 
         return(
-            <div className="MainDiv">
+            <div className="MainDiv"  style={{textAlign:"center"}}>
     <Navbar/>
-            
+    <h3>Food Item</h3>
             <div className="container">
-                
+               
             <table id="example" class="table table-striped table-bordered table-sm row-border hover mb-5" >
             <thead>
                 <tr>
-                    <th>Employee Name</th>
-                    <th>Employee Name</th>
-                    <th>Employee Name</th>
-                    <th>Employee Name</th>
-                    <th>Employee Name</th>
-                    <th>Employee Name</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Phone</th>
+                    <th>Gender</th>
+                    <th>DOB</th>
+                    <th>Image</th>
+                    <th>Action</th>
                     
                 </tr>
             </thead>
@@ -72,7 +75,8 @@ class Employee extends Component{
                         <td>{result.employee_phone}</td>
                         <td>{result.employee_gender}</td>
                         <td>{result.employee_dob}</td>
-                        <td>{result.employee_image}</td>
+                        <td><Image src={'http://localhost:100/images/' + result.employee_image}  width='40'/></td>
+                        <td><Link to ="#">Update</Link>| <a href ='#'  >Delete</a></td>
 
                       
                       </tr>

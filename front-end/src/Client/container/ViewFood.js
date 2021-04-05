@@ -1,13 +1,16 @@
 import { Component } from "react";
 import axios from 'axios'
-import {  Image } from "react-bootstrap";
-
+// import {  Image } from "react-bootstrap";
+import {  Redirect } from 'react-router-dom';
 
 class ViewFood extends Component {
     state = {
         food : '',
         quantity:'1',
-        foods : this.props.match.params.food_name
+        foods : this.props.match.params.food_name,
+		config: {
+			headers: { 'Authorization': `Bearer ${localStorage.getItem('userToken')}` }
+		}
     }
 
     componentDidMount(){
@@ -44,12 +47,10 @@ inputHandler=(e)=>{
     })
 }
     render(){
-        return(
-
-
-<>
-
-<section>
+		if (localStorage.getItem('userToken')) {
+            var verify= 
+			<>
+			<section>
 		<div class="bg-title-sub-page bg-menu-page-02 ">
 			<div class="wrap-title-sub-page">
 				<h2 class="title-l">Food Details</h2>
@@ -127,7 +128,20 @@ inputHandler=(e)=>{
             
         </div>
     </section>
+</>
+		}
+		else{
+            var auth = 
+            <Redirect to = "/login"></Redirect>
+        }
+        return(
 
+
+<>
+
+
+{verify}
+{auth}
 
             </>
         )

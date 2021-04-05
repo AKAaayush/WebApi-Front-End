@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 class OurFood extends Component{
     state = {
         fooditem: [],
-           config : {
-      header : {'authorization': `Bearer ${localStorage.getItem('token')}`}
-  }
+        config: {
+            headers: { 'Authorization': `Bearer ${localStorage.getItem('userToken')}` }
+          }
 
     }
 
