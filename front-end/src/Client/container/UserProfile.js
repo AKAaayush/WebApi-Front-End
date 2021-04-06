@@ -8,6 +8,7 @@ state = {
     name : '',
     email : '',
     address : '',
+    phone : '',
     user: {},
     config: {
         headers: { 'Authorization': `Bearer ${localStorage.getItem('userToken')}` }
@@ -26,7 +27,8 @@ state = {
             user: response.data,
             name : response.data.name,
             address : response.data.address,
-            email : response.data.email
+            email : response.data.email,
+            phone : response.data.phone
         })
         )
 

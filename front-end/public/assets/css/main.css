@@ -1505,7 +1505,7 @@ footer ul li a:hover {
 /*===================================================================  ===*/
 
 .bg-menu-page-01 {
-	background-image: url('/images/img-title-menu-page.jpg');
+	background-image: url('assets/images/menu.jpg');
 }
 
 .our-menu.for-menu-page .title-our-menu {
@@ -1529,7 +1529,7 @@ footer ul li a:hover {
 	padding-bottom: 70px;
 }
 .bg-menu-page-02 {
-	background-image: url('/images/img-title-menu-page-02.jpg');
+	background-image: url('unnamed.jpg');
 }
 .content-menu-02 .hover-img {
 	display: block;

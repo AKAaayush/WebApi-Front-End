@@ -1,5 +1,6 @@
 import { Component } from "react"
 import {  Image, Button } from "react-bootstrap";
+import { Link, LinkButton } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 //Bootstrap and jQuery libraries
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -15,13 +16,15 @@ class UserDetails extends Component{
     super();
     this. state = {
         userlist: [],
-       
+        config: {
+          headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
+        }
     
     }
 }
 componentDidMount() {
     //Get all users details and table columns names in bootstrap table
-    axios.get('http://localhost:100/user/display')
+    axios.get('http://localhost:100/user/display', this.state.config)
     .then((response) => {
         console.log(response)
         this.setState({
@@ -41,6 +44,16 @@ componentDidMount() {
     );
   }, 100);
   }
+
+  deleteUser = (id)=>{
+    axios.delete('http://localhost:100/user/delete/' + id, this.state.config)
+      .then((response) => {
+          console.log(response)
+      })
+      .catch((err) => {
+          console.log(err.response)
+      })
+}
     render(){
         
           
@@ -59,8 +72,10 @@ componentDidMount() {
                          <th> Name</th>
                          <th> Email</th>
                          <th>Address</th>
+                         <th>Phone</th>
                          <th>DOB</th>
                          <th>Gender</th>
+                         <th>Image</th>
                          <th>Action</th>
                          
                      </tr>
@@ -72,10 +87,11 @@ componentDidMount() {
                          <td>{userlist.name}</td>
                          <td>{userlist.email}</td>
                          <td>{userlist.address}</td>
+                         <td>{userlist.phone}</td>
                          <td>{userlist.dob}</td>
                          <td>{userlist.gender}</td>
-                         {/* <td><Image src={'http://localhost:100/images/' + menulist.menu_image}  width='40'/></td> */}
-                         <td><Button>Update</Button>| <Button>Delete</Button></td>
+                         <td><Image src={'http://localhost:100/images/' + userlist.image}  width='40'/></td>
+                         <td><Link to ={'updateuser/'+ userlist._id}>View</Link>| <a href ='/userdetails'  onClick={this.deleteUser.bind(this, userlist._id)}>Delete</a></td>
      
                         
                          

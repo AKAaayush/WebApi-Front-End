@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from 'axios'
 import {  Redirect } from 'react-router-dom';
 //import { Container } from "react-bootstrap";
+import Error from '../components/toast/error'
 import  '../components/Navbar/login.css'
 class Login extends Component {
   constructor(props) {
@@ -10,6 +11,7 @@ class Login extends Component {
     email: '',
     password: '',
     loginSuccess: false,
+    error:false,
     config: {
       headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
   }
@@ -28,13 +30,22 @@ class Login extends Component {
     e.preventDefault();
     axios.post("http://localhost:100/user/login", this.state)
     .then((response) => {
+      console.log("sss",response)
+      if(response.data.success){
+        
+      console.log(response)
       localStorage.setItem('userToken', response.data.token)
+      
       this.setState({ loginSuccess: true })
       window.location.reload();
+      }
+      else{
+     this.setState({ error: true })
 
+      }
     }).catch((err) =>{
     
-     this.setState({ loginSuccess: false })
+     this.setState({ error: true })
      localStorage.setItem('NoauthToken')
     
     } )
@@ -47,39 +58,19 @@ class Login extends Component {
   render() {
 
     if (this.state.loginSuccess === true) {
+      console.log("here")
       return <Redirect to ='/home'/>
+     
 
     }
-    // else  {
-    //   return <Redirect to ='/login'/>
-
-    // }
-  //   if(localStorage.getItem('token')){
-  //     return <Redirect to='/home' />
-  // }
-    // else{
-    //   return <Redirect to='/login' />
-
-    // }
+  
 
 
     return (
 
-      // <div>
-        
-      //     <form>
-
-      //       <input type="text" name="email" id="" placeholder="Username/Email" value={this.state.email} onChange={this.changeHandler} />
-
-      //       <input type="password" name="password" id="" placeholder="Password" value={this.state.password} onChange={this.changeHandler} />
-      //       <button type="submit" onClick={this.submitLogin}>Login</button>
-      //     </form>
-
-      
-      // </div>
       
 <div className = "login">
-{/* {this.state.loginSuccess == false ? <Error message="Email or password incorrect" /> : null} */}
+{this.state.error ? <Error message="Email or password incorrect" /> : null}
   <div className = "logtext">
     <h1><i class="fa fa-user" aria-hidden="true"></i></h1>
     <h1>Login</h1>

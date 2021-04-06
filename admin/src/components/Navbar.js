@@ -15,13 +15,9 @@ class Navbar extends Component {
     }
     logout = (e) => {
         axios.delete('http://localhost:100/logout/admin', this.state.config)
-            .then((response) => {
-                e.preventDefault()
-            localStorage.removeItem('token');
-            this.props.history.push('/')
-        
-          })
-     }
+        localStorage.removeItem('token')
+        window.location.href ="/"}
+     
   
   render(){
     const mystyle = {

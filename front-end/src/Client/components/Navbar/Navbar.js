@@ -36,7 +36,9 @@ axios.delete('http://localhost:100/logout/user', this.state.config)
     .then((response) => {
         e.preventDefault()
     localStorage.removeItem('userToken');
-    this.props.history.push('/')
+    localStorage.removeItem('cart');
+
+    this.props.history.push('/home')
 
   })
             }
@@ -44,7 +46,7 @@ axios.delete('http://localhost:100/logout/user', this.state.config)
         if (localStorage.getItem('userToken')) {
             var login=<>
             
-            <h1 className ="navbar-logo">RMS<i className ="fab fa-react"></i></h1>
+            <h1 className ="navbar-logo">RMS</h1>
             <div className ="menu-icon" onClick ={this.handleClick}>
                 <i className={this.state.clicked ? 'fas fa-times': 'fas fa-bars'}></i>
             </div>
@@ -56,6 +58,9 @@ axios.delete('http://localhost:100/logout/user', this.state.config)
                         </li>
                         <li >
                             <Link to = "/mymenu" className="nav-links" >Menu</Link>
+                        </li>
+                        <li >
+                            <Link to = "/mycart" className="nav-links" >Cart</Link>
                         </li>
                         <li >
                             <Link to = "/Contact" className="nav-links" >Contact</Link>

@@ -1,6 +1,7 @@
 import { Component } from "react";
 import axios from 'axios'
 import {Redirect} from 'react-router-dom';
+import { Button } from "bootstrap";
 
 class Login extends Component {
     state = {
@@ -27,6 +28,7 @@ class Login extends Component {
             this.setState({
                 loginChk : true
             })
+            window.location.replace('/home')
           //  localStorage.setItem('token', response.data.token);
           localStorage.setItem('token', response.data.token)
         //   localStorage.getItem('token', response.data.token)
@@ -77,7 +79,7 @@ class Login extends Component {
                                             </div>
                                             <div class="col-lg-6 login-btm login-button">
                                                 {/* <button type="submit" class="btn btn-outline-primary" onClick={this.AdminLogin}>LOGIN</button> */}
-                                                <a  class="btn btn-outline-primary" onClick={this.submitUser}>Login</a>
+                                                <button class="btn btn-outline-primary" onClick={this.submitUser}>Login</button>
                                             </div>
                                         </div>
                                     </form>

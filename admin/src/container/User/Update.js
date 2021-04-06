@@ -1,17 +1,20 @@
 import { Component } from "react";
 import Navbar from '../../components/Navbar';
 import axios from 'axios'
+import { Redirect } from "react-router";
 
-class FoodUpdate extends Component{
+class MenuUpdate extends Component{
 state = {
-    food_name : '',
-    food_price : '',
-    food_desc : '',
-    food_image : '',
-    id : this.props.match.params.id,
+    name : '',
+    email : '',
+    address : '',
+    phone : '',
+    
     config: {
         headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
       },
+    
+    id : this.props.match.params.id
 }
 changeHandler = (e)=>{
     this.setState({
@@ -20,22 +23,21 @@ changeHandler = (e)=>{
 }
 
 fileHandler = (e)=> {
-    console.log(e.target.files)
     this.setState({
-        food_image : e.target.files[0]
+        menu_image : e.target.files[0]
     })
 }
 
 componentDidMount(){
-    axios.get('http://localhost:100/food/single/' + this.state.id, this.state.config)
+    axios.get('http://localhost:100/user/display/' + this.state.id, this.state.config)
     .then((response)=>{
         this.setState({
-       food_name : response.data.food_name,
-       food_price : response.data.food_price,
-       food_desc : response.data.food_desc,
-       food_image : response.data.food_image
-
-
+            name : response.data.data.name,
+            email : response.data.data.email,
+            address : response.data.data.address,
+            phone : response.data.data.phone,
+            
+ 
 
         })   
 
@@ -46,23 +48,22 @@ componentDidMount(){
     })
 }
 
-updateFoodData = (e)=>{
+updateUserData = (e)=>{
     e.preventDefault()
-    const data = new FormData()
     
-    data.append('food_name' , this.state.food_name)
-    data.append('food_price',this.state.food_price)
-    data.append('food_desc', this.state.food_desc)
-    data.append('food_image', this.state.food_image)
-    console.log(this.state.food_image)
-    axios.put('http://localhost:100/food/update/'+ this.state.id, data)
+   
+    axios.put('http://localhost:100/user/adminupdate/:id', this.state, this.state.config)
     .then((response)=>{
         console.log(response)
+        window.location.replace('/userdetails')
     })
+    
     .catch((err)=>{
         console.log(err.response)
     })
 }
+
+
     render(){
         return(
             <div>
@@ -76,37 +77,39 @@ updateFoodData = (e)=>{
                         <div class="col-lg-3 col-md-2"></div>
                         <div class="col-lg-6 col-md-8 login-box">
                             <div class="col-lg-12 login-key">
-                                <i class="fa fa-hamburger" aria-hidden="true"></i>
+                                <i class="fa fa-book" aria-hidden="true"></i>
                             </div>
                             <div class="col-lg-12 login-title">
-                                Update Food 
+                                Update User 
                 </div>
 
                             <div class="col-lg-12 login-form">
                                 <div class="col-lg-12 login-form">
                                     <form>
                                         <div class="form-group">
-                                            <label class="form-control-label">Food Name</label>
-                                            <input type="text" class="form-control" name="food_name"  placeholder="Food Name" value={this.state.food_name}  onChange={this.changeHandler}  />
+                                            <label class="form-control-label">Name</label>
+                                            <input type="text" class="form-control" name = "name" value={this.state.name}  onChange={this.changeHandler}  />
                                         </div>
                                         <div class="form-group">
-                                            <label class="form-control-label">Food Price</label>
-                                            <input type="text" class="form-control" name="food_price"  placeholder="Food Price"  value= {this.state.food_price} onChange={this.changeHandler}  />
+                                            <label class="form-control-label">EMail</label>
+                                            <input type="text" class="form-control" name = "email" value ={this.state.email} onChange={this.changeHandler}  />
                                         </div>
                                         <div class="form-group">
-                                            <label class="form-control-label">Food desc</label>
-                                            <input type="text" class="form-control" name="food_desc" placeholder="Food desc"   onChange={this.changeHandler} value = {this.state.food_desc} />
+                                            <label class="form-control-label">address</label>
+                                            <input type="text" class="form-control" name = "address" value ={this.state.address} onChange={this.changeHandler}  />
                                         </div>
                                         <div class="form-group">
-                                            <label class="form-control-label">Food Image</label>
-                                            <input type="file" class="form-control" name="food_image"  placeholder="Password"  onChange={this.fileHandler} i />
+                                            <label class="form-control-label">Phone</label>
+                                            <input type="text" class="form-control"  name = "menu_title" value = {this.state.phone}  onChange={this.changeHandler}  />
                                         </div>
+
+                                        
 
 
                                         <div class="col-lg-12 loginbttm">
                                             <div class="col-lg-8 login-btm login-button">
                                                 {/* <button type="submit" class="btn btn-outline-primary" onClick={this.AdminLogin}>LOGIN</button> */}
-                                                <a  href = "/fooditems"class="btn btn-outline-primary" style={{alignContent :'center'}} onClick = {this.updateFoodData}>Update</a>
+                                                <a  href = ""class="btn btn-outline-primary" style={{alignContent :'center'}} onClick={this.updateUserData}>Update</a>
                                             </div>
                                         </div>
                                     </form>
@@ -124,4 +127,4 @@ updateFoodData = (e)=>{
     }
 }
 
-export default FoodUpdate
+export default MenuUpdate
