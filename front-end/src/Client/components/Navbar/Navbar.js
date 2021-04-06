@@ -36,6 +36,8 @@ axios.delete('http://localhost:100/logout/user', this.state.config)
     .then((response) => {
         e.preventDefault()
     localStorage.removeItem('userToken');
+    localStorage.removeItem('cart');
+
     this.props.history.push('/home')
 
   })
