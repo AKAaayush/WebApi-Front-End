@@ -38,24 +38,6 @@ import { Container, Button } from "react-bootstrap";
             return(
               
               <div>
-              {/* <Container>
-              
-              <p>Name<input type="text" value={this.state.name}onChange={(event)=>this.setState({name: event.target.value})}/></p>
-              <p>Address<input type="text" value={this.state.address}onChange={(event)=>this.setState({address: event.target.value})}/></p>
-              <p>Phone<input type="text" value={this.state.phone}onChange={(event)=>this.setState({phone: event.target.value})}/></p>
-              <p>DOB <input type="date" value={this.state.dob} onChange={(event) =>
-                        this.setState({ dob: event.target.value })} className="form-control" name="dob" required/></p>
-              <p>email<input type="text" value={this.state.email}onChange={(event)=>this.setState({email: event.target.value})}/></p>
-              <label>Gender:</label>
-              <p>Male <input type="radio" value ={this.state.gender} onClick={(event)=>this.setState({ gender: "Male" })} name="gender"/></p>
-              <p>Female <input type="radio" value ={this.state.gender} onClick={(event)=>this.setState({ gender: "Female" })} name="gender"/></p>
-              <p>Others <input type="radio" value ={this.state.gender} onClick={(event)=>this.setState({ gender: "Others" })} name="gender"/></p>
-              <p>password<input type="password" value={this.state.password}onChange={(event)=>this.setState({password: event.target.value})}/></p>
-              <Button onClick={this.registerUser} variant="primary" type="submit">
-              Submit
-              </Button>
-    
-              </Container> */}
 
 
 <div className = "login">
@@ -164,36 +146,7 @@ import { Container, Button } from "react-bootstrap";
   </div>
 </form>
     
-    {/* <div id="myModal" class="modal fade">
-      <div class="modal-dialog modal-login">
-        <div class="modal-content">
-          <div class="modal-header">				
-            <h4 class="modal-title">Member Login</h4>
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          </div>
-          <div class="modal-body">
-            <form action="/examples/actions/confirmation.php" method="post">
-              <div class="form-group">
-                <i class="fa fa-user"></i>
-                <input type="text" class="form-control"name="email" id="" placeholder="Username/Email" value={this.state.email} onChange={this.changeHandler} />
-              </div>
-              <div class="form-group">
-                <i class="fa fa-lock"></i>
-                <input type="password" class="form-control" name="password" id="" placeholder="Password" value={this.state.password} onChange={this.changeHandler}/>					
-              </div>
-              <div class="form-group">
-                
-                <a href = "/home"onClick={this.submitLogin}>Login</a>
-              </div>
-            </form>				
-            
-          </div>
-          <div class="modal-footer">
-            <a href="/register">Forgot Password?</a>
-          </div>
-        </div>
-      </div>
-    </div>   */}
+   
     </div>
               </div>
     

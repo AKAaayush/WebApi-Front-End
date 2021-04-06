@@ -7,7 +7,7 @@ import Home from './Client/container/Home'
 import UserProfile from './Client/container/UserProfile'
 import UpdateMenu from './Client/container/UpdateMenu'
 import FoodDetails from './Client/container/FoodDetails'
-import {Route,BrowserRouter, Switch} from 'react-router-dom'
+import {Route,BrowserRouter, Redirect} from 'react-router-dom'
  import Navbar from './Client/components/Navbar/Navbar'
  import ViewFood from './Client/container/ViewFood'
  import CartView from './Client/container/CartView'
@@ -25,6 +25,17 @@ import { Nav } from "react-bootstrap";
         {/* <Header/> */}
         {/* <Login/> */}
         {/* <Signup/> */}
+        <Route
+                exact
+                path="/"
+                render={() => {
+                    return (
+                     
+                      <Redirect to="/home" /> 
+                     
+                    )
+                }}
+              />
             <Route path = '/home' component={Home}></Route>
             <Route path = '/menuadd' component={MenuAdd}></Route>
             <Route path = '/register' component={Register}></Route>

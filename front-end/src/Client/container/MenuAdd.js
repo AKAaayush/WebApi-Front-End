@@ -28,13 +28,7 @@ class ProductAdd extends Component{
     }
     addMenu = (e) =>{
         e.preventDefault();
-        // const data = {
-        //     menu_name : this.state.menu_name,
-        //     menu_price : this.state.menu_price,
-        //     menu_title : this.state.menu_title,
-        //     menu_desc : this.state.menu_desc,
-        //     menu_image : this.state.menu_image
-        // }
+      
         const data = new FormData()
         
         data.append('menu_name' , this.state.menu_name)

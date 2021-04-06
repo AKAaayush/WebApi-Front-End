@@ -47,36 +47,16 @@ class Login extends Component {
   render() {
 
     if (this.state.loginSuccess === true) {
+      console.log("here")
       return <Redirect to ='/home'/>
+     
 
     }
-    // else  {
-    //   return <Redirect to ='/login'/>
-
-    // }
-  //   if(localStorage.getItem('token')){
-  //     return <Redirect to='/home' />
-  // }
-    // else{
-    //   return <Redirect to='/login' />
-
-    // }
+  
 
 
     return (
 
-      // <div>
-        
-      //     <form>
-
-      //       <input type="text" name="email" id="" placeholder="Username/Email" value={this.state.email} onChange={this.changeHandler} />
-
-      //       <input type="password" name="password" id="" placeholder="Password" value={this.state.password} onChange={this.changeHandler} />
-      //       <button type="submit" onClick={this.submitLogin}>Login</button>
-      //     </form>
-
-      
-      // </div>
       
 <div className = "login">
 {/* {this.state.loginSuccess == false ? <Error message="Email or password incorrect" /> : null} */}

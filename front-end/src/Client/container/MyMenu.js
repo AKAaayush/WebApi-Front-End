@@ -49,17 +49,7 @@ class MyMenu extends Component {
 
                             {this.state.menu.map((menu) => {
                                 return (
-                                    // <div class="container" >
-                                    //         <div className="col-md-4">
-                                    //             <p>Id :{b._id}</p>
-                                    //             { b.menu_name}
-                                    //             <Image src={'http://localhost:100/images/' + b.menu_image}  width='100'/>
-                                    //             <Link to={'updatemenu/' + b._id} >Update</Link>/
-                                    //             {/* <p><Link to ='mymenu'  onClick={this.deleteProduct.bind(this, b._id)}>Delete</Link></p> */}
-
-                                    //             <a href="mymenu/" onClick={this.deleteProduct.bind(this, b._id)}>Delete</a>
-                                    //         </div>
-                                    //         </div>
+                                   
 
 
 
