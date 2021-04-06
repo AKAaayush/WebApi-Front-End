@@ -5,7 +5,8 @@ import axios from 'axios'
 
 class CartView extends Component{
     state={
-		checkout :'',
+		'product' :[],
+		
         cart : JSON.parse(localStorage.getItem('cart')),
 		config: {
 			headers: { 'Authorization': `Bearer ${localStorage.getItem('userToken')}` }
@@ -27,9 +28,13 @@ class CartView extends Component{
         })
 }
 
-checkOutItem =()=>{
-	axios.post('http://localhost:100/foodadd')
+checkOutItem =(id)=>{
+	
+	
+	axios.post('http://localhost:100/checkout')
+	 product : this.state.cart.id
         .then((response)=>{
+			
             console.log(response)
         })
         .catch((err)=>{
@@ -90,7 +95,7 @@ checkOutItem =()=>{
 				  <div class="wrap-total clearfix">
 						  <div class="style-pos col-right">
 							  <h6 class="larg-text">Total: $100.00</h6>
-							  <button class="btn-with-bg">Proceed To Checkout</button>
+							  <button class="btn-with-bg" onClick={this.checkOutItem}>Proceed To Checkout</button>
 						  </div>
 						  <div class="style-pos col-left">
 							  <Link to="/home" class="small-text"><i class="fa fa-angle-left" aria-hidden="true"></i> Continue to shopping</Link>
