@@ -49,24 +49,7 @@ class ProductAdd extends Component{
     
     render(){
         return(
-            // <div className ="Container">
-            //     <div>This is add Menu form</div>
-            //     <Container>
-            //     <form>
-            //    <p><lable>Menu Name:</lable> <input type="text"name ='menu_name' onChange={this.inputHandler} /></p> 
-            //      <p><lable>Menu Title:</lable> <input type="text"name ='menu_title'onChange={this.inputHandler}  /></p>
-            //     <p><lable>Menu price:</lable> <input type="text"name ='menu_price' onChange={this.inputHandler} /></p>
-            //     <p><lable>Menu desc:</lable> <input type="text" name ='menu_desc' onChange={this.inputHandler} /></p>
-            //     {/* <p><lable>Menu image:</lable> <input type="file" value ={this.state.menu_image} onChange ={(event)=> this.setState({menu_image : event.target.value})} /></p> */}
-            //     <p><lable>Menu image:</lable> <input type="file"name ='menu_image'  onChange={this.fileHandler} /></p>
-
-
-            //     <Button onClick = {this.addMenu}>Add</Button>
-            //     </form>
-            //     </Container>
-
-              
-            //     </div>
+           
 
             
 
