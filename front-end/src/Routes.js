@@ -10,6 +10,8 @@ import {Route,BrowserRouter, Redirect} from 'react-router-dom'
  import ViewFood from './Client/container/ViewFood'
  import CartView from './Client/container/CartView'
  import Contact from './Client/container/ContactUs'
+ import About from './Client/container/AboutUs'
+
 
 
 
@@ -46,6 +48,8 @@ import {Route,BrowserRouter, Redirect} from 'react-router-dom'
             <Route path = '/food/:food_name' component = {ViewFood}></Route>
             <Route path = '/mycart' component = {CartView}></Route>
             <Route path = '/contact' component = {Contact}></Route>
+            <Route path = '/aboutus' component = {About}></Route>
+
 
 
 
