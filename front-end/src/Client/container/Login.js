@@ -29,6 +29,7 @@ class Login extends Component {
     axios.post("http://localhost:100/user/login", this.state)
     .then((response) => {
       localStorage.setItem('userToken', response.data.token)
+      
       this.setState({ loginSuccess: true })
       window.location.reload();
 

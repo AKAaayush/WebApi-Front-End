@@ -1,5 +1,5 @@
 import { Component } from "react";
-
+import {Link} from 'react-router-dom'
 class CartView extends Component{
     state={
         cart : JSON.parse(localStorage.getItem('cart'))
@@ -25,7 +25,7 @@ class CartView extends Component{
           <section>
 		<div class="bg-title-sub-page bg-menu-page-02 ">
 			<div class="wrap-title-sub-page">
-				<h2 class="title-l">Shopping Cart</h2>
+				<h2 class="title-l" style={{color:'black'}}>Shopping Cart</h2>
 				<h6 class="title-s">Home / Shopping Cart</h6>
 			</div>
 		</div>
@@ -75,7 +75,7 @@ class CartView extends Component{
 							<button class="btn-with-bg">Proceed To Checkout</button>
 						</div>
 						<div class="style-pos col-left">
-							<a href="shop-page.html" class="small-text"><i class="fa fa-angle-left" aria-hidden="true"></i> Continue to shopping</a>
+							<Link to="/home" class="small-text"><i class="fa fa-angle-left" aria-hidden="true"></i> Continue to shopping</Link>
 						</div>
 				</div>
 			</form>

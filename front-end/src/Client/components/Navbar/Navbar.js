@@ -58,6 +58,9 @@ axios.delete('http://localhost:100/logout/user', this.state.config)
                             <Link to = "/mymenu" className="nav-links" >Menu</Link>
                         </li>
                         <li >
+                            <Link to = "/mycart" className="nav-links" >Cart</Link>
+                        </li>
+                        <li >
                             <Link to = "/Contact" className="nav-links" >Contact</Link>
                         </li>
                         <li >

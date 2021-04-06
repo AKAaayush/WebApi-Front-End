@@ -20,16 +20,7 @@ class MyMenu extends Component {
 
             .catch()
     }
-    deleteProduct = (id) => {
-        axios.delete('http://localhost:100/menu/delete/' + id)
-            .then((response) => {
-                console.log(response)
-            })
-            .catch((err) => {
-                console.log(err.response)
-            })
-
-    }
+    
 
 
     render() {
@@ -59,11 +50,11 @@ class MyMenu extends Component {
 
                                             <div class="item-food row wow fadeInDown" data-wow-delay="0.2s">
                                                 <div class="col-12 col-sm-2 img-list-food wow zoomIn " data-wow-delay="0.2s">
-                                                    <a href=""> <Image src={'http://localhost:100/images/' + menu.menu_image}  width='100'/></a>
+                                                    <Link to={'menu/' + menu.menu_name} > <Image src={'http://localhost:100/images/' + menu.menu_image}  width='100'/></Link>
                                                 </div>
                                                 <div class="col-12 col-sm-8 text-list-food ">
                                                     <div class="name-price row">
-                                                        <div class="name-food col-12 col-sm-auto"><a class="hover-link-color" href={'food/' + menu._id}>{menu.menu_name}</a></div>
+                                                        <div class="name-food col-12 col-sm-auto"><Link class="hover-link-color" to ={'menu/' + menu.menu_name} >{menu.menu_name}</Link></div>
                                                         <div class="line-food col">
                                                             <div class="add-line-run"></div>
                                                         </div>
@@ -75,8 +66,8 @@ class MyMenu extends Component {
                                                     </div>
                                                 </div>
                                                 <div class="price-food col-12 col-sm-2">{menu.menu_price}</div>
-                                                <Link to={'updatemenu/' + menu._id} >Update</Link>
-                                                <Link to={'menu/' + menu.menu_name} >Update</Link>
+                                                {/* <Link to={'updatemenu/' + menu._id} >Update</Link>
+                                                <Link to={'menu/' + menu.menu_name} >Update</Link> */}
                                             </div>
                                         </div>
 
