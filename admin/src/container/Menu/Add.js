@@ -13,9 +13,9 @@ class MenuAdd extends Component{
             'menu_price' : '',
             'menu_desc' : '',
             'menu_image' : '',
-            config : {
-                header : {'authorization': `Bearer ${localStorage.getItem('token')}`}
-            }
+            config: {
+                headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
+              }
         }
     }
     inputHandler=(e)=>{
@@ -40,7 +40,7 @@ class MenuAdd extends Component{
         data.append('menu_image', this.state.menu_image)
     
       
-        axios.post('http://localhost:100/addmenu',data)
+        axios.post('http://localhost:100/addmenu',data, this.state.config)
         .then((response)=>{
             console.log(response)
         })
@@ -53,30 +53,12 @@ class MenuAdd extends Component{
     
     render(){
         return(
-            // <div className ="Container">
-            //     <div>This is add Menu form</div>
-            //     <Container>
-            //     <form>
-            //    <p><lable>Menu Name:</lable> <input type="text"name ='menu_name' onChange={this.inputHandler} /></p> 
-            //      <p><lable>Menu Title:</lable> <input type="text"name ='menu_title'onChange={this.inputHandler}  /></p>
-            //     <p><lable>Menu price:</lable> <input type="text"name ='menu_price' onChange={this.inputHandler} /></p>
-            //     <p><lable>Menu desc:</lable> <input type="text" name ='menu_desc' onChange={this.inputHandler} /></p>
-            //     {/* <p><lable>Menu image:</lable> <input type="file" value ={this.state.menu_image} onChange ={(event)=> this.setState({menu_image : event.target.value})} /></p> */}
-            //     <p><lable>Menu image:</lable> <input type="file"name ='menu_image'  onChange={this.fileHandler} /></p>
-
-
-            //     <Button onClick = {this.addMenu}>Add</Button>
-            //     </form>
-            //     </Container>
-
-              
-            //     </div>
+            
 
             <div>
             <Navbar/>
 
 
-            {/* <Paper elevation={10} style={paperStyle}></Paper> */}
             <div class="container" >
 
                 <div class="row">

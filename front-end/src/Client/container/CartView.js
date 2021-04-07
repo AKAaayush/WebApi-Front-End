@@ -1,6 +1,5 @@
 import { Component } from "react";
 import {Link, Redirect} from 'react-router-dom'
-
 import axios from 'axios'
 
 class CartView extends Component{
@@ -29,8 +28,6 @@ class CartView extends Component{
 }
 
 checkOutItem =(id)=>{
-	
-	
 	axios.post('http://localhost:100/checkout')
 	 product : this.state.cart.id
         .then((response)=>{

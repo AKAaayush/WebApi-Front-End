@@ -51,7 +51,7 @@ componentDidMount() {
 //    this.$el.DataTable.destroy(true)
 //  }
  deleteFood = (id) => {
-  axios.delete('http://localhost:100/food/delete/' + id)
+  axios.delete('http://localhost:100/food/delete/' + id, this.state.config)
       .then((response) => {
           console.log(response)
       })
@@ -91,7 +91,7 @@ componentDidMount() {
                     <td>{fooditem.food_desc}</td>
                     <td>{fooditem.food_price}</td>
                     <td><Image src={'http://localhost:100/images/' + fooditem.food_image}  width='40'/></td>
-                    <td><Link to ={'updatefood/'+ fooditem._id}>Update</Link>| <button  onClick={this.deleteFood.bind(this, fooditem._id)}>Delete</button></td>
+                    <td><Link to ={'updatefood/'+ fooditem._id}>Update</Link>| <a href ="/fooditems"  onClick={this.deleteFood.bind(this, fooditem._id)}>Delete</a></td>
 
                    
                     

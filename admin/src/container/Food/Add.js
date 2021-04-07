@@ -11,9 +11,9 @@ class ProductAdd extends Component{
             'food_price' : '',
             'food_desc' : '',
             'food_image' : '',
-            //  config : {
-            //    header : {'authorization': `Bearer ${localStorage.getItem('token')}`}
-            // }
+            config: {
+                headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
+              }
         }
     }
     inputHandler=(e)=>{
@@ -36,7 +36,7 @@ class ProductAdd extends Component{
         data.append('food_image', this.state.food_image)
         console.log(this.state.food_image)
       
-        axios.post('http://localhost:100/foodadd',data)
+        axios.post('http://localhost:100/foodadd',data, this.state.config)
         .then((response)=>{
             console.log(response)
         })

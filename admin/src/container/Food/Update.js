@@ -55,7 +55,7 @@ updateFoodData = (e)=>{
     data.append('food_desc', this.state.food_desc)
     data.append('food_image', this.state.food_image)
     console.log(this.state.food_image)
-    axios.put('http://localhost:100/food/update/'+ this.state.id, data)
+    axios.put('http://localhost:100/food/update/'+ this.state.id, data, this.state.config)
     .then((response)=>{
         console.log(response)
     })
@@ -67,9 +67,6 @@ updateFoodData = (e)=>{
         return(
             <div>
                 <Navbar/>
-
-
-                {/* <Paper elevation={10} style={paperStyle}></Paper> */}
                 <div class="container" >
 
                     <div class="row">

@@ -9,7 +9,11 @@ state = {
     menu_price : '',
     menu_desc : '',
     menu_image : '',
-    id : this.props.match.params.id
+    id : this.props.match.params.id,
+    config: {
+        headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
+      }
+    
 }
 changeHandler = (e)=>{
     this.setState({
@@ -24,7 +28,7 @@ fileHandler = (e)=> {
 }
 
 componentDidMount(){
-    axios.get('http://localhost:100/menu/single/' + this.state.id)
+    axios.get('http://localhost:100/menu/single/' + this.state.id, this.state.config)
     .then((response)=>{
         this.setState({
             menu_name : response.data.menu_name,
@@ -52,7 +56,7 @@ updateMenuData = (e)=>{
     data.append('menu_title',this.state.menu_title)
     data.append('menu_desc', this.state.menu_desc)
     data.append('menu_image', this.state.menu_image)
-    axios.put('http://localhost:100/menu/update/' + this.state.id, data)
+    axios.put('http://localhost:100/menu/update/' + this.state.id, data, this.state.config)
     .then((response)=>{
         console.log(response)
     })

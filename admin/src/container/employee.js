@@ -19,6 +19,9 @@ class Employee extends Component{
     super(props)
       this.state = {
         data: [],
+        config: {
+          headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
+        }
        
               }
       }
@@ -46,7 +49,7 @@ class Employee extends Component{
       }, 100);
      }
      deleteStaff = (id) => {
-      axios.delete('http://localhost:100/employee/delete/' + id)
+      axios.delete('http://localhost:100/employee/delete/' + id, this.state.config)
           .then((response) => {
               console.log(response)
           })
