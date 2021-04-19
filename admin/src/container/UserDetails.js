@@ -69,6 +69,7 @@ componentDidMount() {
                <table id="example" class="display">
                  <thead>
                      <tr>
+                       <th>SN</th>
                          <th> Name</th>
                          <th> Email</th>
                          <th>Address</th>
@@ -81,9 +82,10 @@ componentDidMount() {
                      </tr>
                  </thead>
                  <tbody>
-                 {this.state.userlist.map((userlist) => {
+                 {this.state.userlist.map((userlist, index) => {
                    return(
                      <tr>
+                        <th scope ="row">{index + 1 }</th>
                          <td>{userlist.name}</td>
                          <td>{userlist.email}</td>
                          <td>{userlist.address}</td>

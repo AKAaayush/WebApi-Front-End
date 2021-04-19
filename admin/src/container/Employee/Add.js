@@ -46,7 +46,7 @@ class Employee extends Component{
         .catch((err)=>{
             console.log(err.response)
         })
-
+        window.location.href ="/employeedetails"
           
     }
     render(){

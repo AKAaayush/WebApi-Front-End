@@ -63,6 +63,8 @@ updateMenuData = (e)=>{
     .catch((err)=>{
         console.log(err.response)
     })
+
+    window.location.href ="/Menu"
 }
     render(){
         return(

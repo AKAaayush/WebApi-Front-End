@@ -14,6 +14,7 @@ class CartView extends Component{
     componentDidMount(){
         console.log(this.state.cart)
     }
+	
     deleteCartItem = (id)=> {
         var tepArray =[]
         var cart =localStorage.getItem('cart')
@@ -27,19 +28,9 @@ class CartView extends Component{
         })
 }
 
-checkOutItem =(id)=>{
-	axios.post('http://localhost:100/checkout')
-	 product : this.state.cart.id
-        .then((response)=>{
-			
-            console.log(response)
-        })
-        .catch((err)=>{
-            console.log(err.response)
-        })
-}
+
     render(){
-		if (localStorage.getItem('userToken')) {
+		if (localStorage.getItem('userToken') || this.state.product === []) {
             var verify= 
 			<>
 			<section>

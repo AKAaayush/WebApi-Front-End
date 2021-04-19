@@ -51,29 +51,25 @@ import { Component } from "react";
                         <ul id="useful-links">
                             <li>
                                 <span class="span-left">
-                                    <a href="index.html">Home</a>
+                                    <a href="/home">Home</a>
                                 </span> 
                                 <span class="span-right">
-                                    <a href="shop-page.html">Features</a>
-                                </span>
+                                    <a href="/home">Reservation</a>
+                                </span> 
+                                
+                            
                             </li>
                             <li>
                                 <span class="span-left">
-                                    <a href="menu-01.html">Menus</a>
+                                    <a href="/mymenu">Menus</a>
                                 </span> 
                                 <span class="span-right">
-                                    <a href="blog-list-with-sidebar-01.html">Blog</a>
+                                    <a href="/contact">Contact us</a>
                                 </span>
+                               
                             </li>
-                            <li>
-                                <span class="span-left">
-                                    <a href="reservation-01.html">Reservation</a>
-                                </span> 
-                                <span class="span-right">
-                                    <a href="contact-us.html">Contact us</a>
-                                </span>
-                            </li>
-                            <li><a href="about-us.html">About us</a></li>
+                        
+                            <li><a href="/aboutus">About us</a></li>
                         </ul>
                         <div class="line-divide second-line"></div>
                     </div>

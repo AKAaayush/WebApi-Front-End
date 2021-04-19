@@ -75,6 +75,7 @@ componentDidMount() {
           <table id="example" class="display">
             <thead>
                 <tr>
+                    <th>SN</th>
                     <th>Food Name</th>
                     <th>Food Description</th>
                     <th>Food Price</th>
@@ -84,9 +85,10 @@ componentDidMount() {
                 </tr>
             </thead>
             <tbody>
-            {this.state.fooditem.map((fooditem) => {
+            {this.state.fooditem.map((fooditem, index) => {
               return(
                 <tr>
+                    <th scope ="row">{index + 1 }</th>
                     <td>{fooditem.food_name}</td>
                     <td>{fooditem.food_desc}</td>
                     <td>{fooditem.food_price}</td>

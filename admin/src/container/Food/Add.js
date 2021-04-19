@@ -44,7 +44,7 @@ class ProductAdd extends Component{
             console.log(err.response)
         })
 
-          
+        window.location.href ="/fooditems"
     }
     
     render(){

@@ -71,6 +71,7 @@ deleteMenu = (id) => {
           <table id="example" class="display">
             <thead>
                 <tr>
+                  <th> SN</th>
                     <th>Menu Name</th>
                     <th>Menu Title</th>
                     <th>Menu Description</th>
@@ -81,9 +82,9 @@ deleteMenu = (id) => {
                 </tr>
             </thead>
             <tbody>
-            {this.state.menulist.map((menulist) => {
+            {this.state.menulist.map((menulist, index) => {
               return(
-                <tr>
+                <tr> <th scope ="row">{index + 1 }</th>
                     <td>{menulist.menu_name}</td>
                     <td>{menulist.menu_title}</td>
                     <td>{menulist.menu_desc}</td>

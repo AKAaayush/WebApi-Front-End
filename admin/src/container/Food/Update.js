@@ -30,10 +30,10 @@ componentDidMount(){
     axios.get('http://localhost:100/food/single/' + this.state.id, this.state.config)
     .then((response)=>{
         this.setState({
-       food_name : response.data.food_name,
-       food_price : response.data.food_price,
-       food_desc : response.data.food_desc,
-       food_image : response.data.food_image
+       food_name : response.data.data.food_name,
+       food_price : response.data.data.food_price,
+       food_desc : response.data.data.food_desc,
+       food_image : response.data.data.food_image
 
 
 
@@ -62,6 +62,7 @@ updateFoodData = (e)=>{
     .catch((err)=>{
         console.log(err.response)
     })
+    window.location.href ="/fooditems"
 }
     render(){
         return(

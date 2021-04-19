@@ -72,6 +72,7 @@ class Table extends Component{
                <table id="example" class="display">
                  <thead>
                      <tr>
+                        <th>SN</th>
                          <th>Email</th>
                          <th>People</th>
                          <th>Time</th>
@@ -82,9 +83,10 @@ class Table extends Component{
                      </tr>
                  </thead>
                  <tbody>
-                 {this.state.tablelist.map((tablelist) => {
+                 {this.state.tablelist.map((tablelist, index) => {
                    return(
                      <tr>
+                          <th scope ="row">{index + 1 }</th>
                          <td>{tablelist.user_email}</td>
                          <td>{tablelist.people}</td>
                          <td>{tablelist.time}</td>

@@ -48,7 +48,7 @@ class MenuAdd extends Component{
             console.log(err.response)
         })
 
-          
+        window.location.href ="/Menu"
     }
     
     render(){

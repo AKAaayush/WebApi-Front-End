@@ -95,7 +95,7 @@ class Login extends Component {
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-2">
-{this.state.error ? <Error message="Email or password incorrect" /> : null}
+                        {this.state.error ? <Error message="Email or password incorrect" /> : null}
 
                             </div>
                         </div>
