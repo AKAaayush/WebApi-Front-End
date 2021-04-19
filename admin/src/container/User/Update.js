@@ -29,7 +29,7 @@ fileHandler = (e)=> {
 }
 
 componentDidMount(){
-    axios.get('http://localhost:100/user/display/' + this.state.id, this.state.config)
+    axios.get('http://localhost:100/user/display/api/' + this.state.id, this.state.config)
     .then((response)=>{
         this.setState({
             name : response.data.data.name,
@@ -37,8 +37,6 @@ componentDidMount(){
             address : response.data.data.address,
             phone : response.data.data.phone,
             
- 
-
         })   
 
       
@@ -61,6 +59,10 @@ updateUserData = (e)=>{
     .catch((err)=>{
         console.log(err.response)
     })
+
+    window.location.href ="/userdetails"
+
+    
 }
 
 

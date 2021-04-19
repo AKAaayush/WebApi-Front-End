@@ -1,4 +1,4 @@
-import React, { useState,state } from 'react';
+import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 // import { SidebarData } from './SidebarData';
 import './Navbar.css';
@@ -15,6 +15,7 @@ class Navbar extends Component {
     }
     logout = (e) => {
         axios.delete('http://localhost:100/logout/admin', this.state.config)
+        alert("Deleted successfully!!")
         localStorage.removeItem('token')
         window.location.href ="/"}
      
@@ -30,10 +31,6 @@ class Navbar extends Component {
     vericalAlign: "middle"
    
     };
-  // const [sidebar, setSidebar] = useState(false);
-
-  // const showSidebar = () => setSidebar(!sidebar);
-
 
   if (localStorage.getItem('token')) {
     var adminlogin = 
@@ -79,12 +76,12 @@ class Navbar extends Component {
                    
                 </li>
                 <li>
-                    <a href="#">
+                    <Link to="/tablebooking">
                         <i class="fa fa-table fa-2x"style={mystyle}></i>
                         <span class="nav-text">
                             Table Booking
                         </span>
-                    </a>
+                    </Link>
                 </li>
                 <li>
                     <Link to="/employeedetails">
@@ -98,7 +95,7 @@ class Navbar extends Component {
                    <a href="#">
                        <i class="fa fa-table fa-2x"style={mystyle}></i>
                         <span class="nav-text">
-                            Tables
+                            Orders
                         </span>
                     </a>
                 </li>

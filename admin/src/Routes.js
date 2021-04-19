@@ -7,6 +7,7 @@ import Products from './container/Menu';
 import { Component } from 'react';
 import Login from './container/Login'
 import Employee from './container/employee'
+import TableBooking from './container/Tables'
 import UpdateFood from './container/Food/Update'
 import AddFood from './container/Food/Add'
 import UpdateMenu from './container/Menu/Update'
@@ -20,6 +21,7 @@ import UserUpdate from './container/User/Update'
 
 
 import UserDetails from './container/UserDetails'
+import { Table } from 'material-ui';
 
 // import Navbar from './components/Navbar';
 class Routes extends Component {
@@ -37,6 +39,8 @@ class Routes extends Component {
           <Route path='/userdetails' component={UserDetails} />
           <Route path='/employeedetails' component={Employee} />
           <Route path='/profile' component={UserProfile} />
+          <Route path='/tablebooking' component={TableBooking} />
+
         
 
 

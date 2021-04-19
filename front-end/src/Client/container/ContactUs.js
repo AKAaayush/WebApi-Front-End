@@ -38,7 +38,7 @@ class ContactUs extends Component{
 				</div>
 				<div class="responsive col-md-10 col-lg-6">
 					<div class="messages" id="status"></div>
-					<form class="contact-form" method="post" action="includes/contact-form.php" name="contact" id="contact-form">
+					<form class="contact-form"  name="contact" id="contact-form">
 						<div class="row">
 							<div class="wrap-input-contact col-left col-12 col-sm-6 wow fadeInDown" data-wow-delay="0.2s">
 								<input class="input-form small-text" type="text" id="name" name="name" placeholder="Your name"/>

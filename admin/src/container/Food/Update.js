@@ -30,10 +30,10 @@ componentDidMount(){
     axios.get('http://localhost:100/food/single/' + this.state.id, this.state.config)
     .then((response)=>{
         this.setState({
-       food_name : response.data.food_name,
-       food_price : response.data.food_price,
-       food_desc : response.data.food_desc,
-       food_image : response.data.food_image
+       food_name : response.data.data.food_name,
+       food_price : response.data.data.food_price,
+       food_desc : response.data.data.food_desc,
+       food_image : response.data.data.food_image
 
 
 
@@ -55,21 +55,19 @@ updateFoodData = (e)=>{
     data.append('food_desc', this.state.food_desc)
     data.append('food_image', this.state.food_image)
     console.log(this.state.food_image)
-    axios.put('http://localhost:100/food/update/'+ this.state.id, data)
+    axios.put('http://localhost:100/food/update/'+ this.state.id, data, this.state.config)
     .then((response)=>{
         console.log(response)
     })
     .catch((err)=>{
         console.log(err.response)
     })
+    window.location.href ="/fooditems"
 }
     render(){
         return(
             <div>
                 <Navbar/>
-
-
-                {/* <Paper elevation={10} style={paperStyle}></Paper> */}
                 <div class="container" >
 
                     <div class="row">

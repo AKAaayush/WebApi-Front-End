@@ -71,9 +71,9 @@ class About extends Component{
                     return(
 				<div class="content-event col-sm-10 col-md-8 col-lg-4 wow fadeInUp" data-wow-delay="0.2s" style ={{textAlign:'center'}}>
 					<div class="img-event">
-						<a href="#"><img alt="picture-about-us" src={'http://localhost:100/images/' + result.employee_image} style = {{borderRadius:'50%' ,width:'100px', height:'100px'}}/></a>
+						<a href="/Aboutus"><img alt="123" src={'http://localhost:100/images/' + result.employee_image} style = {{borderRadius:'50%' ,width:'100px', height:'100px'}}/></a>
 					</div>
-					<h3><a class="hover-link-color" href="#">{result.employee_name}</a></h3>
+					<h3><a class="hover-link-color" href="/Aboutus">{result.employee_name}</a></h3>
 					<h6 class="medium-text">{result.employee_phone}</h6>
 					<p>
                     {result.employee_email}

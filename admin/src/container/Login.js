@@ -2,12 +2,14 @@ import { Component } from "react";
 import axios from 'axios'
 import {Redirect} from 'react-router-dom';
 import { Button } from "bootstrap";
+import Error from '../components/toast/error'
 
 class Login extends Component {
     state = {
         account_email : '',
         password : '',
-        loginChk : false
+        loginChk : false,
+        error:false,
     }
 
      // form handler
@@ -20,22 +22,29 @@ class Login extends Component {
 
     //login function  handler 
     submitUser = (e)=>{
-        
         e.preventDefault();
-     
         axios.post('http://localhost:100/admin/login', this.state)
         .then((response)=>{
+            console.log("sss",response)
+            if(response.data.success){
+                console.log(response)
+                localStorage.setItem('token', response.data.token)
             this.setState({
                 loginChk : true
             })
-            window.location.replace('/home')
-          //  localStorage.setItem('token', response.data.token);
-          localStorage.setItem('token', response.data.token)
-        //   localStorage.getItem('token', response.data.token)
+            window.location.reload();
+        }
+        else{
+            this.setState({ error: true })
+       
+             }
+    
         })
         .catch((err)=>{
+            this.setState({ error: true })
             console.log(err.response)
         })
+        this.setState({ email: '', password: '' })
     }
     
 
@@ -85,7 +94,10 @@ class Login extends Component {
                                     </form>
                                 </div>
                             </div>
-                            <div class="col-lg-3 col-md-2"></div>
+                            <div class="col-lg-3 col-md-2">
+                        {this.state.error ? <Error message="Email or password incorrect" /> : null}
+
+                            </div>
                         </div>
                     </div>
 

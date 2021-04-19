@@ -115,7 +115,7 @@ class Home extends Component{
               <>
              
               <section id="slider-deli">
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" >
                 <ol class="carousel-indicators">
                   <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                   <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -123,14 +123,16 @@ class Home extends Component{
                 </ol>
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <img class="d-block w-100" src="assets/images/icons/visa.png" alt="First slide"/>
+                    <img class="d-block w-100" src="assets/images/food.jpg" alt="First slide"  style = {{height:"800px"}}/>
                   </div>
                   <div class="carousel-item">
-                    <img class="d-block w-100" src="assets/images/icons/visa.png" alt="Second slide"/>
+                    <img class="d-block w-100" src="assets/images/food1.jpg" alt="Second slide"  style = {{height:"800px"}}/>
                   </div>
                   <div class="carousel-item">
-                    <img class="d-block w-100" src="assets/images/icons/visa.png" alt="Third slide"/>
+        
+                    <img class="d-block w-100" src="assets/images/food2.jpg" alt="Third slide"  style = {{height:"800px"}}/>
                   </div>
+
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -152,7 +154,7 @@ class Home extends Component{
 				<h3 style = {{color :'black'}}>Feeling at Home</h3>
 			</div>
 			<div class="symbol-banner wow zoomIn" data-wow-delay="0.5s">
-				<img alt="symbol" src="assets/images/icons/symbol-banner.png"/>
+				<img alt="symbol" src="assets/images/logo.png"/>
 				<div class="line-symbol-banner wow fadeInLeftBig" id="short-line-left" data-wow-delay="0.5s"></div>
 				<div class="line-symbol-banner wow fadeInLeftBig" id="long-line-left" data-wow-delay="0.5s"></div>
 				<div class="line-symbol-banner wow fadeInRightBig" id="short-line-right" data-wow-delay="0.5s"></div>
@@ -170,37 +172,37 @@ class Home extends Component{
 				</div>
 					<div class="content-event col-sm-10 col-md-8 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
 						<div class="img-event">
-							<a href="blog-detail.html"><img alt="picture-event" src="assets/images/img-event-01.jpg"/></a>
+							<a href="/home"><img alt="picture-event" src="assets/images/event.jpg"/></a>
 						</div>
-						<h3><a class="hover-link-color" href="blog-detail.html">Deli Summer Auscoutics</a></h3>
+						<h3><a class="hover-link-color" href="/home"> Summer Auscoutics</a></h3>
 						<p>
 							Proin lacinia nisl ut ultricies posuere nulla ut imperdiet nunc. Quisque id tellus vitae mauris feugiat comodone, donec pretium odio nec sagittis euismod.
 						</p>
-						<span class="date-event"><i class="fa fa-calendar" aria-hidden="true"></i> 21 June, 2017</span>
+						<span class="date-event"><i class="fa fa-calendar" aria-hidden="true"></i> 21 June, 2021</span>
 						<span class="time-event"><i class="fa fa-clock-o" aria-hidden="true"></i> 10:00AM - 22:00PM</span>
 					</div>
 
 					<div class="content-event col-sm-10 col-md-8 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
 						<div class="img-event">
-							<a href="blog-detail.html"><img alt="picture-event" src="assets/images/img-event-02.jpg"/></a>
+							<a href="/home"><img alt="picture-event" src="assets/images/event1.jpg"/></a>
 						</div>
-						<h3><a class="hover-link-color" href="blog-detail.html">The Live Jazz Music Night</a></h3>
+						<h3><a class="hover-link-color" href="/home">The Live Jazz Music Night</a></h3>
 						<p>
 							Proin lacinia nisl ut ultricies posuere nulla ut imperdiet nunc. Quisque id tellus vitae mauris feugiat comodone, donec pretium odio nec sagittis euismod.
 						</p>
-						<span class="date-event"><i class="fa fa-calendar" aria-hidden="true"></i> 22 June, 2017</span>
+						<span class="date-event"><i class="fa fa-calendar" aria-hidden="true"></i> 22 June, 2021</span>
 						<span class="time-event"><i class="fa fa-clock-o" aria-hidden="true"></i> 19:00PM - 23:00PM</span>
 					</div>
 
 					<div class="content-event col-sm-10 col-md-8 col-lg-4 wow fadeInUp" data-wow-delay="0.6s">
 						<div class="img-event">
-							<a href="blog-detail.html"><img alt="picture-event" src="assets/images/img-event-03.jpg"/></a>
+							<a href="/home"><img alt="picture-event" src="assets/images/event2.jpg"/></a>
 						</div>
-						<h3><a class="hover-link-color" href="blog-detail.html">Mother’s Day Celebrating at Deli</a></h3>
+						<h3><a class="hover-link-color" href="/home">valentine’s Day Celebrating </a></h3>
 						<p>
 							Proin lacinia nisl ut ultricies posuere nulla ut imperdiet nunc. Quisque id tellus vitae mauris feugiat comodone, donec pretium odio nec sagittis euismod.
 						</p>
-						<span class="date-event"><i class="fa fa-calendar" aria-hidden="true"></i> 23 June, 2017</span>
+						<span class="date-event"><i class="fa fa-calendar" aria-hidden="true"></i> 14 Feb, 2021</span>
 						<span class="time-event"><i class="fa fa-clock-o" aria-hidden="true"></i> 10:00AM - 22:00PM</span>
 					</div>
 			</div>			

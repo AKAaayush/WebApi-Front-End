@@ -9,7 +9,10 @@ class StaffUpdate extends Component{
         employee_address : '',
         employee_phone : '',
         employee_image: '',
-        id : this.props.match.params.id
+        id : this.props.match.params.id,
+        config: {
+            headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
+          }
     }
     changeHandler = (e)=>{
         this.setState({
@@ -25,7 +28,7 @@ class StaffUpdate extends Component{
     }
 
     componentDidMount(){
-        axios.get('http://localhost:100/employee/single/' + this.state.id)
+        axios.get('http://localhost:100/employee/single/' + this.state.id, this.state.config)
         .then((response)=>{
             this.setState({
            employee_name : response.data.employee_name,
@@ -54,13 +57,15 @@ class StaffUpdate extends Component{
         data.append('employee_phone', this.state.employee_phone)
         data.append('employee_image', this.state.employee_image)
         console.log(this.state.employee_image)
-        axios.put('http://localhost:100/employee/update/'+ this.state.id, data)
+        axios.put('http://localhost:100/employee/update/'+ this.state.id, data, this.state.config)
         .then((response)=>{
             console.log(response)
         })
         .catch((err)=>{
             console.log(err.response)
         })
+
+        window.location.href ="/employeedetails"
     }
 
     render(){

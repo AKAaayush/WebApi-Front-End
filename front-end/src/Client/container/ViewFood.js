@@ -38,6 +38,8 @@ class ViewFood extends Component {
         tepArray = tepArray.filter(items => items.id!==this.state.food._id)
         tepArray.push({quantity:this.state.quantity,product:this.state.food,id:this.state.food._id})
         localStorage.setItem('cart', JSON.stringify(tepArray))
+
+		alert("Food added successfully!!")
     
 }
 

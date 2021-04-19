@@ -32,10 +32,8 @@ class Login extends Component {
     .then((response) => {
       console.log("sss",response)
       if(response.data.success){
-        
       console.log(response)
       localStorage.setItem('userToken', response.data.token)
-      
       this.setState({ loginSuccess: true })
       window.location.reload();
       }

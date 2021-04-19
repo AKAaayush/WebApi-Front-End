@@ -19,6 +19,9 @@ class Employee extends Component{
     super(props)
       this.state = {
         data: [],
+        config: {
+          headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
+        }
        
               }
       }
@@ -46,7 +49,7 @@ class Employee extends Component{
       }, 100);
      }
      deleteStaff = (id) => {
-      axios.delete('http://localhost:100/employee/delete/' + id)
+      axios.delete('http://localhost:100/employee/delete/' + id, this.state.config)
           .then((response) => {
               console.log(response)
           })
@@ -66,6 +69,7 @@ class Employee extends Component{
             <table id="example" class="table table-striped table-bordered table-sm row-border hover mb-5" >
             <thead>
                 <tr>
+                  <th>S N</th>
                     <th>Name</th>
                     <th>Email</th>
                     <th>Address</th>
@@ -76,9 +80,10 @@ class Employee extends Component{
                 </tr>
             </thead>
                 <tbody>
-                {this.state.data.map((result) => {
+                {this.state.data.map((result, index) => {
                   return (
                     <tr >
+                      <th scope="row">{index +1}</th>
                         <td>{result.employee_name}</td>
                         <td>{result.employee_email}</td>
                         <td>{result.employee_address}</td>
