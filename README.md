@@ -13,7 +13,7 @@ Some of the features of the website are as follows:
 *	Add to cart features
 *	Responsive and user-friendly interface
 
-## Back=End API Link
+## Back-End API Link
 https://github.com/softwarica-github/t2---backend-api-AKAaayush
 
 ## Youtube Link
