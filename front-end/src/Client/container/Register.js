@@ -1,5 +1,6 @@
 import { Component } from "react";
 import axios from 'axios'
+import { Link } from "react-router-dom";
 
 
 
@@ -31,6 +32,7 @@ import axios from 'axios'
           };
           axios.post('http://localhost:100/user/add',data).then((response) =>{
             this.setState({ isRegisterIn: true })
+            window.location.href ="/login"
           })
         }
     
@@ -80,7 +82,7 @@ import axios from 'axios'
 
   {/* DOB */}
   <div class="form-outline mb-4">
- <label class="form-label" for="form2Example1">Full Name</label>
+ <label class="form-label" for="form2Example1">Date Of Birth</label>
     <input type="date" id="form2Example1" class="form-control" value={this.state.dob} onChange={(event) =>
                         this.setState({ dob: event.target.value })} />
     
@@ -127,7 +129,7 @@ import axios from 'axios'
 
   {/* <!-- Register buttons --> */}
   <div class="text-center">
-    <p>Not a member? <a href="#!">Register</a></p>
+    <p>Already Register? <Link to="/login">Login</Link></p>
     <p>or sign up with:</p>
     <button type="button" class="btn btn-primary btn-floating mx-1">
       <i class="fab fa-facebook-f"></i>

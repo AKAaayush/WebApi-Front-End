@@ -51,6 +51,9 @@ class Home extends Component {
 
       .then((response) => {
         console.log(response)
+        alert("Table Booked Successfully")
+        window.location.href ="/home"
+
 
       })
       .catch((err) => {
@@ -103,7 +106,7 @@ class Home extends Component {
                     </div>
                   </div>
                   <div class="col-5 col-sm-3 col-md-2">
-                    <button class="btn-find-table" onClick={this.addTable}>FIND A TABLE</button>
+                    <button class="btn-find-table" onClick={this.addTable}>BOOK A TABLE</button>
                   </div>
                 </div>
               </form>

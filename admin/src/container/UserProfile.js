@@ -146,7 +146,7 @@ class UserProfile extends Component{
                             <hr class="my-1" />
                             <div className ="col-12">
                             <button type="submit" onClick={this.sendprofile} class="btn btn-primary" value="Save Changes">Save Change</button>
-                            <button type="submit" onClick={this.sendprofile} class="btn btn-primary" value="Save Changes" style ={{float:'right'}}>Save Change</button>
+                        
                             </div>       
                         </form>
                     </div>

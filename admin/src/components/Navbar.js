@@ -15,7 +15,6 @@ class Navbar extends Component {
     }
     logout = (e) => {
         axios.delete('http://localhost:100/logout/admin', this.state.config)
-        alert("Deleted successfully!!")
         localStorage.removeItem('token')
         window.location.href ="/"}
      

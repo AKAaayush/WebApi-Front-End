@@ -42,9 +42,9 @@ class OurFood extends Component{
             <div class="col-item col-sm-8 col-md-6 col-lg-3">
 					<div class="item-shop-page">
 						<div class="img-item">
-							<a href="product-detail.html"><img src={'http://localhost:100/images/' + fooditem.food_image} alt="img-food"/></a>
+							<img src={'http://localhost:100/images/' + fooditem.food_image} alt="img-food"/>
 						</div>
-						<a href="product-detail.html"><h4 class="name-item">{fooditem.food_name}</h4></a>
+						<h4 class="name-item">{fooditem.food_name}</h4>
 						<p class="price-item">{fooditem.food_price}</p>
 						<Link to ={'food/' + fooditem.food_name}  class="btn-with-bg add-to-cart">ADD TO CART</Link>
 					</div>
