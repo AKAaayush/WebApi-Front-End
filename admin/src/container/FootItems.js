@@ -1,6 +1,6 @@
 // import React from 'react';
 import { Component } from 'react';
-import { Link, LinkButton } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 // import pagiantionFactory from 'react-bootstrap-table2-paginator'
 import Navbar from '../components/Navbar';
 import axios from 'axios'
@@ -12,7 +12,7 @@ import 'jquery/dist/jquery.min.js';
 import "datatables.net-dt/js/dataTables.dataTables"
 import "datatables.net-dt/css/jquery.dataTables.min.css"
 import $ from 'jquery'; 
-import { Button } from 'bootstrap';
+
 
 class Reports extends Component {
 

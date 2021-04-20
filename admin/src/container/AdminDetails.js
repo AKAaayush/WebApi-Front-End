@@ -11,7 +11,7 @@ import "datatables.net-dt/css/jquery.dataTables.min.css"
 import $ from 'jquery'; 
 import axios from 'axios';
 
-class UserDetails extends Component{
+class AdminDetails extends Component{
     constructor(){
     super();
     this.state = {
@@ -24,7 +24,7 @@ class UserDetails extends Component{
 }
 componentDidMount() {
     //Get all users details and table columns names in bootstrap table
-    axios.get('http://localhost:100/user/display', this.state.config)
+    axios.get('http://localhost:100/Admin/display', this.state.config)
     .then((response) => {
         console.log(response)
         this.setState({
@@ -45,8 +45,8 @@ componentDidMount() {
   }, 100);
   }
 
-  deleteUser = (id)=>{
-    axios.delete('http://localhost:100/user/delete/' + id, this.state.config)
+  deleteAdmin = (id)=>{
+    axios.delete('http://localhost:100/admin/delete/' + id, this.state.config)
       .then((response) => {
           console.log(response)
       })
@@ -61,7 +61,7 @@ componentDidMount() {
             <div className="MainDiv" style={{textAlign:"center"}}>
             <Navbar/>
          
-               <h3>User Details</h3>
+               <h3>Admin Details</h3>
          
            
            <div className="container">
@@ -74,8 +74,6 @@ componentDidMount() {
                          <th> Email</th>
                          <th>Address</th>
                          <th>Phone</th>
-                         <th>DOB</th>
-                         <th>Gender</th>
                          <th>Image</th>
                          <th>Action</th>
                          
@@ -90,10 +88,8 @@ componentDidMount() {
                          <td>{userlist.email}</td>
                          <td>{userlist.address}</td>
                          <td>{userlist.phone}</td>
-                         <td>{userlist.dob}</td>
-                         <td>{userlist.gender}</td>
                          <td><Image src={'http://localhost:100/images/' + userlist.image}  width='40'/></td>
-                         <td><Link to ={'updateuser/'+ userlist._id}>View</Link>| <a href ='/userdetails'  onClick={this.deleteUser.bind(this, userlist._id)}>Delete</a></td>
+                         <td><a href ='/admindetails'  onClick={this.deleteAdmin.bind(this, userlist._id)}>Delete</a></td>
      
                         
                          
@@ -106,9 +102,11 @@ componentDidMount() {
              </table>
                
              </div>
+
+             <Link to="/addadmin">Add</Link>
            </div>
         )
     }
 }
 
-export default UserDetails
+export default AdminDetails

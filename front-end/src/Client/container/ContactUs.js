@@ -26,14 +26,9 @@ class ContactUs extends Component{
 						Donec quis euismod purus. Donec feugiat ligula rhoncus, varius nisl sed, tincidunt lectus. Nulla vulputate, lectus vel volutpat efficitur, orci lacus sodales sem, at interdum quam ligula sit amet quam.
 					</p>
 					<ul>
-						<li>ADDRESS: 100 Tenth Avenue, New York City, NY 1001</li>
-						<li>FOR BOOKING: (044) 359 0173</li>
-						<li class="follow-us">FOLLOW US ON: 
-							<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-							<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-							<a href="#"><i class="fa fa-tripadvisor" aria-hidden="true"></i></a>
-							<a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-						</li>
+						<li>ADDRESS: Kathamandu Nepal</li>
+						<li>FOR BOOKING: 827483000</li>
+					
 					</ul>
 				</div>
 				<div class="responsive col-md-10 col-lg-6">
@@ -48,7 +43,7 @@ class ContactUs extends Component{
 							<div class="wrap-input-contact col-right col-12 col-sm-6 wow fadeInDown" data-wow-delay="0.2s">
 								<input class="input-form small-text" type="text" id="email" name="email" placeholder="Your email"/>
 								<span class="tooltip-validate small-text">Valid email is required (ex@abc.xyz)</span>
-								<span class="symbol-validate"><i class="fa fa-exclamation" aria-hidden="true"></i></span>
+							 	<span class="symbol-validate"><i class="fa fa-exclamation" aria-hidden="true"></i></span>
 							</div>
 							
 							<div class="wrap-input-contact col-12 wow fadeInDown" data-wow-delay="0.4s">

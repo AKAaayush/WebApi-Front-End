@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 // import { SidebarData } from './SidebarData';
-import './Navbar.css';
+// import './Navbar.css';
 import axios from "axios";
 import { Component } from 'react';
 
@@ -49,10 +49,8 @@ class Navbar extends Component {
                 <li class="has-subnav">
                 < Link to = '/Menu'>
                         <i class="fa fa-book fa-2x"style={mystyle} ></i>
-                       
-                        
                         <span class="nav-text">
-                            Menus
+                            Menu
                         </span>
                         </ Link>
                     
@@ -85,36 +83,35 @@ class Navbar extends Component {
                 </li>
                 <li>
                     <Link to="/employeedetails">
-                        <i class="fa fa-user-tie fa-2x"style={mystyle}></i>
+                    <i class="fa fa-id-card fa-2x"style={mystyle}></i>
+                       
                         <span class="nav-text">
                            Staff
                         </span>
                     </Link>
                 </li>
-                <li>
-                   <a href="#">
-                       <i class="fa fa-table fa-2x"style={mystyle}></i>
-                        <span class="nav-text">
-                            Orders
-                        </span>
-                    </a>
-                </li>
+             
                 <li>
                    <Link to = '/profile'>
-                        <i class="fa fa-map-marker fa-2x"style={mystyle}></i>
+                        {/* <i class="fa fa-map-marker fa-2x"style={mystyle}></i> */}
+                        <i class="fa fa-user fa-2x "style={mystyle}></i>
                         <span class="nav-text">
                             Profile
                         </span>
                     </Link>
                 </li>
+
                 <li>
-                    <a href="#">
-                       <i class="fa fa-info fa-2x"style={mystyle}></i>
+                   <Link to = '/admindetails'>
+                   <i class="fa fa-user-tie fa-2x"style={mystyle}></i>
+                        {/* <i class="fa fa-map-marker fa-2x"style={mystyle}></i> */}
+                        {/* <i class="fa fa-user fa-2x "style={mystyle}></i> */}
                         <span class="nav-text">
-                            Documentation
+                            Admin Details
                         </span>
-                    </a>
+                    </Link>
                 </li>
+        
             </ul>
 
             <ul class="logout">

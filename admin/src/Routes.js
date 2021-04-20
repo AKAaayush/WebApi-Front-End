@@ -16,12 +16,14 @@ import AddMenu from './container/Menu/Add'
 import AddStaff from './container/Employee/Add'
 import UserProfile from './container/UserProfile'
 import UserUpdate from './container/User/Update'
-
-
-
-
 import UserDetails from './container/UserDetails'
-import { Table } from 'material-ui';
+import AdminDetails from './container/AdminDetails'
+import AdminAdd from './container/Admin/Add'
+
+
+
+
+
 
 // import Navbar from './components/Navbar';
 class Routes extends Component {
@@ -61,6 +63,11 @@ class Routes extends Component {
           {/* users */}
 
           <Route path='/updateuser/:id' component={UserUpdate} />
+
+          {/* Admin Details Routes */}
+          <Route path='/admindetails' component={AdminDetails} />
+          <Route path='/addadmin' component={AdminAdd} />
+          
 
 
 

@@ -2,64 +2,70 @@ import { Component } from "react";
 import Navbar from '../../components/Navbar';
 import axios from 'axios'
 
-class MenuUpdate extends Component{
-state = {
-    name : '',
-    email : '',
-    address : '',
-    phone : '',
+class AdminAdd extends Component{
+// state = {
+//     name : '',
+//     email : '',
+//     address : '',
+//     phone : '',
     
-    config: {
-        headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
-      },
+//     config: {
+//         headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
+//       },
     
-    id : this.props.match.params.id
-}
+//     id : this.props.match.params.id
+// }
+
+constructor(){
+        super();
+        this.state = {
+          
+          'email': '',
+          'address': '',
+          'name': '',
+          'phone': '',
+          'password': '',
+            config: { headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }},
+       
+          
+        }
+      }
 changeHandler = (e)=>{
     this.setState({
         [e.target.name] : e.target.value
     })
 }
 
-fileHandler = (e)=> {
-    this.setState({
-        menu_image : e.target.files[0]
-    })
-}
+// fileHandler = (e)=> {
+//     this.setState({
+//         menu_image : e.target.files[0]
+//     })
+// }
 
-componentDidMount(){
-    axios.get('http://localhost:100/user/display/api/' + this.state.id, this.state.config)
-    .then((response)=>{
-        this.setState({
-            name : response.data.data.name,
-            email : response.data.data.email,
-            address : response.data.data.address,
-            phone : response.data.data.phone,
-            
-        })   
 
-      
-    })
-    .catch((err)=>{
-        console.log(err.response)
-    })
-}
-
-updateUserData = (e)=>{
-    e.preventDefault()
-    
+AddAdminData = (e)=>{
+    e.preventDefault();
+    const data = {
+        name : this.state.name,
+        email : this.state.email,
+        address : this.state.address,
+        gender : this.state.gender,
+        phone : this.state.phone,
+        dob : this.state.dob,
+        password : this.state.password
+      };
    
-    axios.put('http://localhost:100/user/adminupdate/:id', this.state, this.state.config)
+    axios.post('http://localhost:100/admin/add', data, this.state.config)
     .then((response)=>{
         console.log(response)
-        window.location.replace('/userdetails')
+        window.location.replace('/admindetails')
     })
     
     .catch((err)=>{
         console.log(err.response)
     })
 
-    window.location.href ="/userdetails"
+    window.location.href ="/admindetails"
 
     
 }
@@ -81,7 +87,7 @@ updateUserData = (e)=>{
                                 <i class="fa fa-book" aria-hidden="true"></i>
                             </div>
                             <div class="col-lg-12 login-title">
-                                Update User 
+                                Add Admin 
                 </div>
 
                             <div class="col-lg-12 login-form">
@@ -101,7 +107,11 @@ updateUserData = (e)=>{
                                         </div>
                                         <div class="form-group">
                                             <label class="form-control-label">Phone</label>
-                                            <input type="text" class="form-control"  name = "menu_title" value = {this.state.phone}  onChange={this.changeHandler}  />
+                                            <input type="text" class="form-control"  name = "phone" value = {this.state.phone}  onChange={this.changeHandler}  />
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-control-label">Phone</label>
+                                            <input type="text" class="form-control"  name = "password" value = {this.state.password}  onChange={this.changeHandler}  />
                                         </div>
 
                                         
@@ -110,7 +120,7 @@ updateUserData = (e)=>{
                                         <div class="col-lg-12 loginbttm">
                                             <div class="col-lg-8 login-btm login-button">
                                                 {/* <button type="submit" class="btn btn-outline-primary" onClick={this.AdminLogin}>LOGIN</button> */}
-                                                <a  href = "/userdetails"class="btn btn-outline-primary" style={{alignContent :'center'}} onClick={this.updateUserData}>Update</a>
+                                                <a  href = "/admindetails"class="btn btn-outline-primary" style={{alignContent :'center'}} onClick={this.AddAdminData}>Add</a>
                                             </div>
                                         </div>
                                     </form>
@@ -128,4 +138,4 @@ updateUserData = (e)=>{
     }
 }
 
-export default MenuUpdate
+export default AdminAdd

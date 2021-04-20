@@ -2,7 +2,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { Component } from 'react';
 import Navbar from '../components/Navbar';
-import {  Image, Button } from "react-bootstrap";
+import {  Image } from "react-bootstrap";
 //Bootstrap and jQuery libraries
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'jquery/dist/jquery.min.js';
@@ -14,7 +14,7 @@ import $ from 'jquery';
 class Products extends Component {
   constructor(){
     super();
-    this. state = {
+    this.state = {
       menulist: [],
       config: {
         headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
