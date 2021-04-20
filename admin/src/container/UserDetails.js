@@ -93,7 +93,7 @@ componentDidMount() {
                          <td>{userlist.dob}</td>
                          <td>{userlist.gender}</td>
                          <td><Image src={'http://localhost:100/images/' + userlist.image}  width='40'/></td>
-                         <td><Link to ={'updateuser/'+ userlist._id}>View</Link>| <a href ='/userdetails'  onClick={this.deleteUser.bind(this, userlist._id)}>Delete</a></td>
+                         <td><Link to ={'updateuser/'+ userlist._id}>Update</Link>| <a href ='/userdetails'  onClick={this.deleteUser.bind(this, userlist._id)}>Delete</a></td>
      
                         
                          

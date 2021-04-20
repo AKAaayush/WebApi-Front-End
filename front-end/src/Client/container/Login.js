@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from 'axios'
+import { Link } from "react-router-dom";
 import {  Redirect } from 'react-router-dom';
 //import { Container } from "react-bootstrap";
 import Error from '../components/toast/error'
@@ -113,7 +114,7 @@ class Login extends Component {
 
   {/* <!-- Register buttons --> */}
   <div class="text-center">
-    <p>Not a member? <a href="/register">Register</a></p>
+    <p>Not a member? <Link to="/register">Register</Link></p>
     <p>or sign up with:</p>
     <button type="button" class="btn btn-primary btn-floating mx-1">
       <i class="fab fa-facebook-f"></i>
