@@ -40,7 +40,8 @@ class About extends Component{
 			<div class="row">
 				<div class="wrap-pic-intro col-sm-10 col-md-8 col-lg-5">
 					<div class="hover-img wrap-video-about-us">
-						<img src="asstes/images/sign.jpg" alt="video-about-us"/>
+					<img class="d-block w-100" src="assets/images/food.jpg" alt="First slide" />
+
 					</div>
 				</div>
 

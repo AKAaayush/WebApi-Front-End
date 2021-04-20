@@ -32,7 +32,7 @@ class OurFood extends Component{
                
             <div class="wrap-related-product">
 				<h6 class="medium-text">Discover Our</h6>
-				<h3 class="larg-text">Related Products</h3>
+				<h3 class="larg-text">Available Food</h3>
 			</div>
             <div class="middle-shop-list row">
             {this.state.fooditem.map((fooditem) => {

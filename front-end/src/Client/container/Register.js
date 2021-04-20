@@ -1,6 +1,6 @@
 import { Component } from "react";
 import axios from 'axios'
-import { Container, Button } from "react-bootstrap";
+
 
 
 
@@ -12,6 +12,7 @@ import { Container, Button } from "react-bootstrap";
           'email': '',
           'gender': '',
           'name': '',
+          'address':'',
           'phone': '',
           'password': '',
           'confirmpassword':'',

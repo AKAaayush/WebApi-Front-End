@@ -45,7 +45,7 @@ axios.delete('http://localhost:100/logout/user', this.state.config)
         if (localStorage.getItem('userToken')) {
             var login=<>
             
-            <h1 className ="navbar-logo">RMS</h1>
+            <h1 className ="navbar-logo"><Link to ="/home" style={{color:'white'}}>RMS</Link></h1>
             <div className ="menu-icon" onClick ={this.handleClick}>
                 <i className={this.state.clicked ? 'fas fa-times': 'fas fa-bars'}></i>
             </div>
